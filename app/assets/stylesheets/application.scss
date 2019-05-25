@@ -19,9 +19,9 @@
 
 .navbar {
 	background: image_url('rubber_grip.png');
-	-moz-box-shadow: 0px 4px 6px 0 #f631d3;
-	-webkit-box-shadow: 0px 4px 6px 0 #f631d3;
-	box-shadow: 0px 4px 6px 0 #f631d3;
+	-moz-box-shadow: 0px 4px 6px 0 #6d98c7;
+	-webkit-box-shadow: 0px 4px 6px 0 #6d98c7;
+	box-shadow: 0px 4px 6px 0 #6d98c7;
 }
 
 .navbar-brand {
@@ -43,11 +43,11 @@
 }
 
 .accent-color {
-	color: #f631d3 !important;
+	color: #6d98c7 !important;
 }
 
 .accent-color-background {
-	background-color: #f631d3 !important;
+	background-color: #6d98c7 !important;
 }
 
 body {
@@ -55,17 +55,25 @@ body {
 	background: image_url('grey_wash_wall.png');
 }
 
+.textured-border {
+	background-image: image_url('rubber_grip.png');
+	padding: 30px 10px 10px 10px;
+	margin-top: 20px;
+  	margin-bottom: 20px;
+  	border-radius: 15px;
+  	-moz-box-shadow: 10px 10px 10px 0 #111;
+  	-webkit-box-shadow: 10px 10px 10px 0 #111;
+  	box-shadow: 10px 10px 10px 0 #111;
+  	border: 3px solid;
+  	border-color:  #808084 #444445 #444445 #808084;
+}
+
 .booyah-box {
-  -moz-box-shadow: 4px 4px 6px 0 #f631d3;
-  -webkit-box-shadow: 4px 4px 6px 0 #f631d3;
-  box-shadow: 4px 4px 6px 0 #f631d3;
   background: #ccccd0;
-  border: 3px solid #ccc;
-  border-color: #333335 #808084 #808084 #333335;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
+  border: 3px solid;
+  border-color: #444445 #808084 #808084 #444445;
   border-radius: 15px;
+  padding: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
