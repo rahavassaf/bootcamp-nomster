@@ -15,6 +15,28 @@
  */
 @import "bootstrap";
 
+.navbar {
+	background: image_url('rubber_grip.png');
+	-moz-box-shadow: 0px 4px 6px 0 #f631d3;
+	-webkit-box-shadow: 0px 4px 6px 0 #f631d3;
+	box-shadow: 0px 4px 6px 0 #f631d3;
+}
+
+.navbar-brand {
+	font-size: 35px;
+	font-weight: bold;
+	text-shadow: 4px 0px 10px #111,
+				0px 4px 10px #111,
+				-4px 0px 10px #111,
+				0px -4px 10px #111;
+}
+
+.navbar-toggler {
+	box-shadow: 4px 0px 5px 3px #111,
+				0px 4px 5px 3px #111,
+				-4px 0px 5px 3px #111,
+				0px -4px 5px 3px #111;
+}
 
 .accent-color {
 	color: #f631d3 !important;
@@ -25,18 +47,19 @@
 }
 
 body {
-	background-color: #343a40;
+	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+	background: image_url('grey_wash_wall.png');
 }
 
 .booyah-box {
   -moz-box-shadow: 4px 4px 6px 0 #f631d3;
   -webkit-box-shadow: 4px 4px 6px 0 #f631d3;
   box-shadow: 4px 4px 6px 0 #f631d3;
-  background: #bbbbc0;
+  background: #ccccd0;
   border: 3px solid #ccc;
-  border-color: #808084 #333335 #333335 #808084;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  border-color: #333335 #808084 #808084 #333335;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   border-radius: 15px;
 }
