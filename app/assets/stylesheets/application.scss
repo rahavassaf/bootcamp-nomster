@@ -53,6 +53,7 @@
 body {
 	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 	background: image_url('grey_wash_wall.png');
+	background-attachment: fixed;
 }
 
 .textured-border {
@@ -74,6 +75,34 @@ body {
   border-color: #444445 #808084 #808084 #444445;
   border-radius: 15px;
   padding: 20px;
+}
+
+.pagination {
+	a, .previous_page, .next_page, .current {
+		background-image: image_url('rubber_grip.png');
+		padding: 5px 5px 5px 5px;
+	  	margin: 20px 2px 20px 2px;
+	  	border-radius: 15px;
+	  	-moz-box-shadow: 10px 10px 10px 0 #111;
+	  	-webkit-box-shadow: 10px 10px 10px 0 #111;
+	  	box-shadow: 10px 10px 10px 0 #111;
+	  	border: 3px solid;
+	  	border-color:  #808084 #444445 #444445 #808084;
+	  	color: #6d98c7;
+	  	font-weight: bolder;
+	}
+
+	.next_page, .previous_page {
+		font-weight: bolder;
+	}
+
+	.disabled {
+		border-color:  #b08084 #644445 #644445 #b08084 !important;
+	}
+
+	em {
+		border-color:  #80b084 #448845 #448845 #80b084 !important;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
