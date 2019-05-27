@@ -139,17 +139,22 @@ body {
 	}
 
 	.disabled {
-		border-color:  #e08084 #844445 #844445 #e08084 !important;
+		border-color:  #f07074 #844445 #844445 #f07074 !important;
 	}
 
 	em {
-		border-color:  #80e084 #448845 #448845 #80e084 !important;
+		border-color:  #33cc33 #448845 #448845 #33cc33 !important;
 	}
 }
 
 .fa-edit {
 	color: #33cc33;
 	font-size: 22px;
+}
+
+.grey-transperant {
+	color: #909090 !important;
+	opacity: 0.5;
 }
 
 .gold-star {
@@ -160,13 +165,13 @@ body {
 				0px 3px 6px #7a790b,
 				-3px 0px 6px #7a790b,
 				0px -3px 6px #7a790b;
+	float: left;
 }
 
 .grey-star {
-	color: #909090;
 	margin: 0;
 	padding: 0;
-	opacity: 0.3;
+	float: left;
 }
 
 .mirror {
@@ -175,6 +180,20 @@ body {
 
 .rating {
 	display: inline-block;
+}
+
+.red-heart {
+	color: #f07074;
+}
+
+hr.vertical {	 
+	width: 3px;
+	height: 27px;
+	background-color: #808084;
+	display: inline-block;
+	margin: 0px 3px 0px 3px;
+	border-radius: 1px;
+	vertical-align: bottom;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,18 +1,27 @@
 <div class ="textured-border col-10 offset-1">
 	<div class="place-toolbar">
-		<div class="display: inline-block;">
-			<%= link_to edit_place_path(:id => place.id) do %>
-				<i class="fa fa-edit"></i>
-			<% end %>
-		</div>
+			
+		<i class="fa fa-edit grey-transperant"></i>
+	
+		<%= link_to edit_place_path(:id => place.id) do %>
+			<i class="fa fa-edit"></i>
+		<% end %>
+
+		<hr class="vertical">
+
+		<i class="fa fa-heart red-heart"></i>
+
+		<i class="fa fa-heart grey-transperant"></i>
+
+		<hr class="vertical">
 
 		<div class="rating">
 			<i class="fa fa-star gold-star"></i>
 			<i class="fa fa-star gold-star"></i>
 			<i class="fa fa-star-half gold-star"></i>
-			<i class="fa fa-star-half grey-star mirror"></i>
-			<i class="fa fa-star grey-star"></i>
-			<i class="fa fa-star grey-star"></i>
+			<i class="fa fa-star-half grey-star mirror grey-transperant"></i>
+			<i class="fa fa-star grey-star grey-transperant"></i>
+			<i class="fa fa-star grey-star grey-transperant"></i>
 		</div>
 	</div>
 	<div class="booyah-box">
