@@ -15,16 +15,10 @@ class PlacesController < ApplicationController
 	def show
 		@place = Place.find(params[:id])
 	end
-	
-  	def render_place place
-		render "render_place.html.erb"
-  	end
 
 	private
 
 	def place_params
     	params.require(:place).permit(:name, :description, :address)
   	end
-
-
 end

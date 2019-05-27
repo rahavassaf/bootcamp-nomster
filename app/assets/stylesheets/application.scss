@@ -98,6 +98,8 @@ body {
 	padding: 0;
 	margin-bottom: 2px;
 	font-size: 18px;
+	align-content: flex-end;
+	text-align: right;
 }
 
 .booyah-box {
@@ -147,7 +149,32 @@ body {
 
 .fa-edit {
 	color: #33cc33;
-	font-size: 24px;
+	font-size: 22px;
+}
+
+.gold-star {
+	color: #e0dd0b;
+	margin: 0;
+	padding: 0;
+	text-shadow: 3px 0px 6px #7a790b,
+				0px 3px 6px #7a790b,
+				-3px 0px 6px #7a790b,
+				0px -3px 6px #7a790b;
+}
+
+.grey-star {
+	color: #909090;
+	margin: 0;
+	padding: 0;
+	opacity: 0.3;
+}
+
+.mirror {
+	transform: scale(-1, 1);
+}
+
+.rating {
+	display: inline-block;
 }
 
 h1, h2, h3, h4, h5, h6 {
