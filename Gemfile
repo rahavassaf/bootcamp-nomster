@@ -68,6 +68,7 @@ gem 'popper_js', '>= 1.1.0'
 gem 'bootstrap', '>= 4.1.0.0'
 gem 'will_paginate', '~> 3.1.0'
 gem 'simple_form'
+gem "font-awesome-rails"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
