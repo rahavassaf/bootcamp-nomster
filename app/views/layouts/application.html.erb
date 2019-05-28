@@ -28,6 +28,18 @@
       </div>
     </nav>
     <!-- /navbar -->
+
+    <% if flash[:error].present? %>
+      <div class="col-5 offset-1 alert alert-danger">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+
+    <% if flash[:success].present? %>
+      <div class="col-5 offset-1 alert alert-success">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
     
     <%= yield %>
     &nbsp;<br>

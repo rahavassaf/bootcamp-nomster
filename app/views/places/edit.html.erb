@@ -1,0 +1,13 @@
+<div class="textured-border col-10 offset-1">
+	<div class="booyah-box">
+		<h1>Enter Your Place Detail</h1>
+
+		<%= simple_form_for @place do |f| %>
+			<%= f.input :name, :input_html => { :value => @place.name } %>
+			<%= f.input :address, :input_html => { :value => @place.address } %>
+			<%= f.input :description, :input_html => { :value => @place.description } %>
+			<br>
+			<%= f.submit 'Update', class: 'btn btn-primary' %>
+		<% end %>
+	</div>
+</div>
