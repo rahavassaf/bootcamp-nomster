@@ -1,3 +1,6 @@
+<div class ="textured-border col-10 offset-1">
+<div class="booyah-box">
+
 <h2>Resend unlock instructions</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
@@ -12,8 +15,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Resend unlock instructions" %>
+    <%= f.button :submit, "Resend unlock instructions", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
