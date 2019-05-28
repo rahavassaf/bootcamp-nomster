@@ -218,10 +218,13 @@ h1, h2, h3, h4, h5, h6 {
 .popup-double-up {
 	font-size: 20px;
 	font-weight: bolder;
-	text-shadow: 4px 0px 10px #111,
-			0px 4px 10px #111,
-			-4px 0px 10px #111,
-			0px -4px 10px #111;
 	transform: scaleX(3.0);
 	-webkit-backface-visibility: hidden;
+}
+
+.dark-text-shadow {
+	text-shadow: 4px 0px 10px #111,
+		0px 4px 10px #111,
+		-4px 0px 10px #111,
+		0px -4px 10px #111;
 }

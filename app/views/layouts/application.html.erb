@@ -22,13 +22,13 @@
           <% if user_signed_in? %>
             <!-- signed in -->
             <li class="nav-item">
-              <%= link_to new_place_path, class: 'nav-link accent-color' do %>
+              <%= link_to new_place_path, class: 'nav-link accent-color dark-text-shadow' do %>
                 <i class="fa fa-plus-circle"></i> New Place
               <% end %>
             </li>
 
             <li class="nav-item">
-              <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link accent-color" do %>
+              <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-sign-out"></i> Sign Out
               <% end %>
             </li>
@@ -36,13 +36,13 @@
           <% else %>
             <!-- not signed in -->
             <li class="nav-item">
-              <%= link_to new_user_session_path, class: "nav-link accent-color" do %>
+              <%= link_to new_user_session_path, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-sign-in"></i> Sign In
               <% end %>
             </li>
 
             <li class="nav-item">
-              <%= link_to new_user_registration_path, class: "nav-link accent-color" do %>
+              <%= link_to new_user_registration_path, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-user-plus"></i> Register
               <% end %>
             </li>
@@ -70,16 +70,16 @@
     <%= yield %>
     &nbsp;<br>
     &nbsp;<br>
-    &nbsp;
+    &nbsp;<br>
     <div class="footer">
       <a class="" type="button" data-toggle="collapse" data-target="#footercollapse" aria-controls="footercollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-angle-double-up accent-color popup-double-up dark-shadow"></i>
+        <i class="fa fa-angle-double-up accent-color popup-double-up dark-text-shadow"></i>
       </a>
 
       <div class="navbar-collapse collapse" id="footercollapse">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item">About</li>
-          <li class="nav-item">Contact</li>
+          <li class="nav-item accent-color dark-text-shadow">About</li>
+          <li class="nav-item accent-color dark-text-shadow">Contact</li>
         </ul>
       </div>
     </div>
