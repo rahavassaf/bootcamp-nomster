@@ -1,11 +1,7 @@
-<div class ="col-10 offset-1" style="padding: 0;">
-	<%= will_paginate @places, previous_label: '&lsaquo;', next_label: '&rsaquo;' %>
-</div>
+<%= render partial: 'render_pagination' %>
 
 <% @places.each  do |place| %>
 	<%= render partial: "render_place", locals: {place: place} %>
 <% end %>
 
-<div class ="col-10 offset-1" style="padding: 0;">
-	<%= will_paginate @places, previous_label: '&lsaquo;', next_label: '&rsaquo;' %>
-</div>
+<%= render partial: 'render_pagination' %>
