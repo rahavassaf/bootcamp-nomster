@@ -34,10 +34,6 @@
 	font-family: 'Days One', sans-serif;
 	font-weight: 600;
 	letter-spacing: -0.3px;
-	text-shadow: 4px 0px 10px #111,
-				0px 4px 10px #111,
-				-4px 0px 10px #111,
-				0px -4px 10px #111;
 }
 
 .navbar-toggler {
@@ -69,8 +65,8 @@
 	z-index: 100;
 	width: 100%;
 	border-top: 3px solid #444445;
-	text-align: center;
 	align-content: center;
+	text-align: center;
 }
 
 body {

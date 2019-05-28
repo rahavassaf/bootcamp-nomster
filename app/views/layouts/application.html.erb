@@ -15,7 +15,7 @@
       <button class="navbar-toggler navbar-toggler-right accent-color-background" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="accent-color navbar-brand" href="<%= root_path %>">Nomster</a>
+      <a class="accent-color navbar-brand dark-text-shadow" href="<%= root_path %>">Nomster</a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -77,10 +77,19 @@
       </a>
 
       <div class="navbar-collapse collapse" id="footercollapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-          <li class="nav-item accent-color dark-text-shadow">About</li>
-          <li class="nav-item accent-color dark-text-shadow">Contact</li>
-        </ul>
+        <div class="col-2 offset-5" style="text-align:left; padding-left: 60px;">
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            
+            <li class="nav-item accent-color dark-text-shadow">
+              <i class="fa fa-phone"></i> Contact
+            </li>
+
+            <li class="nav-item accent-color dark-text-shadow">
+              <i class="fa fa-info-circle"></i> About
+            </li>
+
+          </ul>
+        </div>
       </div>
     </div>
   </body>
