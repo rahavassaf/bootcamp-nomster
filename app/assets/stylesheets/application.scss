@@ -97,15 +97,18 @@ body {
 	font-size: 18px;
 	align-content: flex-end;
 	text-align: right;
-	vertical-align: middle;
+	vertical-align: bottom;
 }
 
 .booyah-box {
-  background: #ccccd0;
-  border: 3px solid;
-  border-color: #444445 #808084 #808084 #444445;
-  border-radius: 5px;
-  padding: 20px;
+	background: #ccccd0;
+	border: 3px solid;
+	border-color: #444445 #808084 #808084 #444445;
+	border-radius: 5px;
+	padding: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .pagination {
@@ -153,14 +156,14 @@ body {
 	opacity: 0.5;
 }
 
-.gold-star {
-	color: #e0dd0b;
+.accent-star {
+	color: #6d98c7;
 	margin: 0;
 	padding: 0;
-	text-shadow: 3px 0px 6px #7a790b,
-				0px 3px 6px #7a790b,
-				-3px 0px 6px #7a790b,
-				0px -3px 6px #7a790b;
+	text-shadow: 3px 0px 6px #304154,
+				0px 3px 6px #304154,
+				-3px 0px 6px #304154,
+				0px -3px 6px #304154;
 	float: left;
 }
 
@@ -180,6 +183,10 @@ body {
 
 .red-heart {
 	color: #f07074;
+	text-shadow: 3px 0px 6px #653436,
+			0px 3px 6px #653436,
+			-3px 0px 6px #653436,
+			0px -3px 6px #653436;
 }
 
 hr.vertical {	 

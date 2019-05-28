@@ -1,10 +1,14 @@
 <div class ="textured-border col-10 offset-1">
 	<div class="place-toolbar">
 			
-		<i class="fa fa-edit grey-transperant"></i>
+		
 	
-		<%= link_to edit_place_path(:id => place.id) do %>
-			<i class="fa fa-edit"></i>
+		<% if user_signed_in? && current_user.id == place.user_id %>
+			<%= link_to edit_place_path(:id => place.id) do %>
+				<i class="fa fa-edit"></i>
+			<% end %>
+			<% else %>
+				<i class="fa fa-edit grey-transperant"></i>
 		<% end %>
 
 		<hr class="vertical">
@@ -16,9 +20,9 @@
 		<hr class="vertical">
 
 		<div class="rating">
-			<i class="fa fa-star gold-star"></i>
-			<i class="fa fa-star gold-star"></i>
-			<i class="fa fa-star-half gold-star"></i>
+			<i class="fa fa-star accent-star"></i>
+			<i class="fa fa-star accent-star"></i>
+			<i class="fa fa-star-half accent-star"></i>
 			<i class="fa fa-star-half grey-star mirror grey-transperant"></i>
 			<i class="fa fa-star grey-star grey-transperant"></i>
 			<i class="fa fa-star grey-star grey-transperant"></i>
