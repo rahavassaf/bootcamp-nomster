@@ -1,4 +1,6 @@
 class PlacesController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+
 	def index
 		@places = Place.paginate(page: params[:page], per_page: 10)
 	end
@@ -8,7 +10,8 @@ class PlacesController < ApplicationController
 	end
 
 	def create
-		@place = Place.create(place_params)
+		@place = current_user.places.create(place_params)
+
 		if @place.invalid?
 			flash[:error] = 'Could not save: the data you entered is invalid.'
 			redirect_to request.referrer
