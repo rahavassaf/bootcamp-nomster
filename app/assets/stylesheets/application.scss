@@ -24,8 +24,6 @@
 
 .navbar {
 	background: image_url('rubber_grip.png');
-	-moz-box-shadow: 0px 4px 6px 0 #6d98c7;
-	-webkit-box-shadow: 0px 4px 6px 0 #6d98c7;
 	box-shadow: 0px 4px 6px 0 #6d98c7;
 	position: sticky;
 	top: 0;
@@ -61,8 +59,6 @@
 
 .footer {
 	background: image_url('rubber_grip.png');
-	-moz-box-shadow: 0px 4px 6px 0 #6d98c7;
-	-webkit-box-shadow: 0px 4px 6px 0 #6d98c7;
 	box-shadow: 0px -4px 6px 0 #6d98c7;
 	position: fixed;
 	bottom: 0;
@@ -85,8 +81,6 @@ body {
 	margin-top: 15px;
   	margin-bottom: 15px;
   	border-radius: 5px;
-  	-moz-box-shadow: 10px 10px 10px 0 #111;
-  	-webkit-box-shadow: 10px 10px 10px 0 #111;
   	box-shadow: 10px 10px 10px 0 #111;
   	border: 3px solid;
   	border-color:  #808084 #444445 #444445 #808084;
@@ -120,8 +114,6 @@ body {
 		background-image: image_url('rubber_grip.png');
 		padding: 5px 5px 5px 5px;
 	  	margin-top: 20px;
-	  	-moz-box-shadow: 10px 10px 10px 0 #111;
-	  	-webkit-box-shadow: 10px 10px 10px 0 #111;
 	  	box-shadow: 10px 10px 10px 0 #111;
 	  	border-width: 3px 1px 3px 1px;
 	  	border-style: solid;
@@ -143,10 +135,16 @@ body {
 
 	.disabled {
 		border-color:  #f07074 #844445 #844445 #f07074 !important;
+		box-shadow: 10px 10px 10px 0 #111,
+					0px 2px 10px 0 #844445,
+					0px -2px 10px 0 #844445;
 	}
 
-	em {
+	.current {
 		border-color:  #33cc33 #448845 #448845 #33cc33 !important;
+		box-shadow: 10px 10px 10px 0 #111,
+					0px 2px 10px 0 #448845,
+					0px -2px 10px 0 #448845;
 	}
 }
 
@@ -195,9 +193,9 @@ body {
 .red-heart {
 	color: #f07074;
 	text-shadow: 3px 0px 6px #653436,
-			0px 3px 6px #653436,
-			-3px 0px 6px #653436,
-			0px -3px 6px #653436;
+				0px 3px 6px #653436,
+				-3px 0px 6px #653436,
+				0px -3px 6px #653436;
 }
 
 hr.vertical {	 
@@ -238,7 +236,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark-text-shadow {
 	text-shadow: 4px 0px 10px #111,
-		0px 4px 10px #111,
-		-4px 0px 10px #111,
-		0px -4px 10px #111;
+			0px 4px 10px #111,
+			-4px 0px 10px #111,
+			0px -4px 10px #111;
 }
