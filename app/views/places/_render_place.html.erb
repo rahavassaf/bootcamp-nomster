@@ -1,7 +1,5 @@
 <div class ="textured-border col-10 offset-1">
 	<div class="place-toolbar">
-			
-		
 	
 		<% if user_signed_in? && current_user.id == place.user_id %>
 			<%= link_to edit_place_path(:id => place.id) do %>
@@ -27,6 +25,15 @@
 			<i class="fa fa-star grey-star grey-transperant"></i>
 			<i class="fa fa-star grey-star grey-transperant"></i>
 		</div>
+
+		<% unless defined?(@supress_self_link) && @supress_self_link %>
+			<hr class="vertical">
+
+			<%= link_to place_path(:id => place.id) do %>
+				<i class="fa fa-external-link"></i>
+			<% end %>
+		<% end %>
+
 	</div>
 	<div class="booyah-box">
 		<h1><%= place.name %></h1>

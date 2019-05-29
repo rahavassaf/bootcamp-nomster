@@ -18,6 +18,10 @@
 @import url('https://fonts.googleapis.com/css?family=Days+One&display=swap');
 @import "font-awesome";
 
+::selection {
+	background-color: #88a9cd;
+}
+
 .navbar {
 	background: image_url('rubber_grip.png');
 	-moz-box-shadow: 0px 4px 6px 0 #6d98c7;
@@ -147,8 +151,13 @@ body {
 }
 
 .fa-edit {
-	color: #33cc33;
+	color: #6d98c7;
 	font-size: 22px;
+}
+
+.fa-external-link {
+	color: #6d98c7;
+	font-size: 20px;
 }
 
 .grey-transperant {

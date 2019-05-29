@@ -23,6 +23,7 @@ class PlacesController < ApplicationController
 
 	def show
 		@place = Place.find(params[:id])
+		@supress_self_link = true # avoid circular links in place_path
 	end
 
 	def edit

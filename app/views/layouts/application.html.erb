@@ -15,7 +15,14 @@
       <button class="navbar-toggler navbar-toggler-right accent-color-background" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <a class="accent-color navbar-brand dark-text-shadow" href="<%= root_path %>">Nomster</a>
+
+      <a class ="accent-color dark-text-shadow">
+      <% if user_signed_in? %>
+          <i class="fa fa-user"></i> <%= current_user.email %>
+      <% end %>
+      </a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
