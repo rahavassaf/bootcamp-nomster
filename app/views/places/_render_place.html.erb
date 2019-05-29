@@ -1,22 +1,40 @@
 <div class ="textured-border col-10 offset-1">
-	<div class="place-toolbar">
 	
-		<% if user_signed_in? && current_user.id == place.user_id %>
-			<%= link_to edit_place_path(:id => place.id) do %>
-				<i class="fa fa-edit"></i>
-			<% end %>
+	<!-- toolbox above the place -->
+	<div class="place-toolbar">
+		<!-- options for logged-in user only -->
+		<% if user_signed_in? %>
+			<% if current_user.id == place.user_id %>
+				<%= link_to edit_place_path(:id => place.id) do %>
+					<i class="fa fa-edit"></i>
+				<% end %>
+
+				<hr class="vertical">
+
+				<%= link_to place_path(:id => place.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} do %>
+					<i class="fa fa-trash"></i>
+			 	<% end %>
+
+
 			<% else %>
-				<i class="fa fa-edit grey-transperant"></i>
+					<i class="fa fa-edit grey-transperant"></i>
+
+					<hr class="vertical">
+
+					<i class="fa fa-trash grey-transperant"></i>
+			<% end %>
+
+			<hr class="vertical">
+
+			<% #TODO check if the user liked this place %>
+			<i class="fa fa-heart red-heart"></i>
+			<i class="fa fa-heart grey-transperant"></i>
+
+			<hr class="vertical">
+
 		<% end %>
 
-		<hr class="vertical">
-
-		<i class="fa fa-heart red-heart"></i>
-
-		<i class="fa fa-heart grey-transperant"></i>
-
-		<hr class="vertical">
-
+		<!-- options for all user -->
 		<div class="rating">
 			<i class="fa fa-star accent-star"></i>
 			<i class="fa fa-star accent-star"></i>
@@ -33,8 +51,9 @@
 				<i class="fa fa-external-link"></i>
 			<% end %>
 		<% end %>
-
 	</div>
+
+	<!-- the actual place -->
 	<div class="booyah-box">
 		<h1><%= place.name %></h1>
 		<i><%= place.address %></i><br>
