@@ -13,8 +13,7 @@ class PlacesController < ApplicationController
 		@place = current_user.places.create(place_params)
 
 		if @place.invalid?
-			flash[:error] = 'Could not save: the data you entered is invalid.'
-			redirect_to request.referrer
+			render :new, status: :unprocessable_entity
 		else
 			flash[:success] = 'Saved Successfully'
 			redirect_to @place
@@ -28,15 +27,23 @@ class PlacesController < ApplicationController
 
 	def edit
 		@place = Place.find(params[:id])
+
+		if @place.user != current_user
+			return render plain: 'Not Allowed', status: :forbidden
+		end
 	end
 
 	def update
 		@place = Place.find(params[:id])
+
+		if @place.user != current_user
+			return render plain: 'Not Allowed', status: :forbidden
+		end
+
 		@place.update(place_params)
 
     	if @place.invalid?
-			flash[:error] = 'Could not save: the data you entered is invalid.'
-			redirect_to request.referrer
+    		render :edit, status: :unprocessable_entity
 		else
 			flash[:success] = 'Updated Successfully'
 			redirect_to @place
@@ -44,7 +51,13 @@ class PlacesController < ApplicationController
 	end
 
 	def destroy
-		Place.find(params[:id]).destroy
+		@place = Place.find(params[:id])
+
+		if @place.user != current_user
+			return render plain: 'Not Allowed', status: :forbidden
+		end
+
+		@place.destroy
 		redirect_to root_path
 	end
 
