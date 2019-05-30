@@ -93,7 +93,6 @@ body {
 	padding: 0;
 	margin-bottom: 2px;
 	font-size: 18px;
-	align-content: flex-end;
 	text-align: right;
 	vertical-align: bottom;
 }
@@ -184,10 +183,13 @@ body {
 
 .mirror {
 	transform: scale(-1, 1);
+	margin-left: -1px;
 }
 
 .rating {
 	display: inline-block;
+	padding: 0px;
+	margin: 0px;
 }
 
 .red-heart {
@@ -213,14 +215,10 @@ h1, h2, h3, h4, h5, h6 {
   padding:0;
 }
 
-.alert-danger {
+.alert{
 	margin-top: 20px;
 	margin-bottom: 20px;
-}
-
-.alert-success {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	padding: 2px 8px 2px 8px;
 }
 
 .clear-button {
@@ -246,4 +244,21 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FFEEEE;
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
+}
+
+.modal-dialog {
+	padding: 10px;
+	background: #ccccd0;
+	margin: 0px;
+
+	.simple_form, .form-group, .modal-header {
+		background: #ccccd0;
+		border: none; 
+	}
+}
+
+.modal-dialog-wide {
+	max-width: none;
+	max-height: none;
+	margin: 0px;
 }

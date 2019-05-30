@@ -1,0 +1,26 @@
+<div class="modal fade" id="edit_modal_<%= place.id %>" tabindex="-1" role="dialog" aria-labelledby="edit_modal_<%= place.id %>" aria-hidden="true">
+<div class="textured-border col-10 offset-1">
+  <div class="modal-dialog modal-dialog-wide booyah-box" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="edit_modal_<%= place.id %>">Enter Your Place Detail</h4>
+      </div>
+
+      <%= simple_form_for place do |f| %>
+        <%= f.input :name, :input_html => { :value => place.name } %>
+        <%= f.input :address, :input_html => { :value => place.address } %>
+        <%= f.input :description, :input_html => { :value => place.description } %>
+
+        <br>
+        <div style="align-content: center; text-align: center;">
+          <%= f.submit 'Update', class: 'btn btn-primary' %>
+          &nbsp;
+          <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+            Cancel
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

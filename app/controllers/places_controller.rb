@@ -46,7 +46,7 @@ class PlacesController < ApplicationController
     		render :edit, status: :unprocessable_entity
 		else
 			flash[:success] = 'Updated Successfully'
-			redirect_to @place
+			redirect_to request.referrer
 		end
 	end
 
