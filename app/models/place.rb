@@ -4,4 +4,6 @@ class Place < ApplicationRecord
 	validates :description, presence: true, length: { maximum: 500,  minimum: 10 }
 
 	belongs_to :user
+	geocoded_by :address
+  	after_validation :geocode
 end

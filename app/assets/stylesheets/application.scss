@@ -246,6 +246,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2px 8px 2px 8px;
 }
 
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
 .modal-dialog {
 	padding: 10px;
 	background: #ccccd0;
