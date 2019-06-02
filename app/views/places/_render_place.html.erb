@@ -54,6 +54,19 @@
 			<i class="fa fa-star grey-star grey-transperant"></i>
 		</div>
 
+		<!-- Google map -->
+		<hr class="vertical">
+		<% if place.latitude.present? && place.longitude.present? %>
+			<%= render partial: "render_map_modal", locals: {place: place} %>
+
+			<%= link_to '#', data: {toggle: 'modal', target: "#map_modal_#{place.id}"} do %>
+				<i class="fa fa-map-marker"></i>
+			<% end %>
+		<% else %>
+			<i class="fa fa-map-marker grey-transperant"></i>
+		<% end %>
+		<!-- / Google map -->
+
 		<% unless defined?(@supress_self_link) && @supress_self_link %>
 			<hr class="vertical">
 
@@ -68,40 +81,6 @@
 		<h1><%= place.name %></h1>
 		<i><%= place.address %></i><br>
 		<p><%= place.description %></p><br>
-
-
-
-		<!-- Google map -->
-		<% if defined?(@render_map) && @render_map && place.latitude.present? && place.longitude.present? %>
-		 
-		  <script>
-		    function initMap<%= place.id %>() {
-		      var map<%= place.id %> = new google.maps.Map(document.getElementById("map<%= place.id %>"), {
-		        zoom: 10,
-		        center: {lat: <%= place.latitude %>, lng: <%= place.longitude %>},
-				zoomControl: true,
-				mapTypeControl: false,
-				scaleControl: true,
-				streetViewControl: false,
-				rotateControl: true,
-				fullscreenControl: false
-		      });
-
-		      var marker<%= place.id %> = new google.maps.Marker({
-		        position: {lat: <%= place.latitude %>, lng: <%= place.longitude %>},
-		        map: map<%= place.id %>,
-		        title: "<%= place.name %>",
-		      });
-		    }
-		  </script>
-
-		  <script async defer
-		  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GEOCODER_API_KEY'] %>&callback=initMap<%= place.id %>">
-		  </script>
-
-		  <div id="map<%= place.id %>" class="map"></div>
-		<% end %>
-		<!-- / Google map -->
 
 	    <% if place.user.present? %>
 	      <small><%= place.user.email %></small>

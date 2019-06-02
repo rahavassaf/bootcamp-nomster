@@ -147,15 +147,7 @@ body {
 	}
 }
 
-.fa-edit {
-	color: #6d98c7;
-}
-
-.fa-external-link {
-	color: #6d98c7;
-}
-
-.fa-trash {
+.fa-edit, .fa-external-link, .fa-trash, .fa-map, .fa-map-marker {
 	color: #6d98c7;
 }
 
@@ -247,34 +239,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
+  transform: translate(-50%, -35%);
 }
 
 .modal-dialog {
-	padding: 10px;
+	padding: 0px;
 	background: #ccccd0;
 	margin: 0px;
 
-	.simple_form, .form-group, .modal-header {
+	.simple_form, .form-group, .modal-header, .modal-content {
 		background: #ccccd0;
 		border: none; 
 	}
 }
 
-.modal-dialog-wide {
+.modal-dialog-wide, .modal-wide {
 	max-width: none;
 	max-height: none;
 	margin: 0px;
+	padding: 0px;
+	max-width: 60vw;
+	overflow: hidden;
 }
 
 .map {
-	height: 100%;
 	border-radius: 5px;
-	width:400px;
-	height: 250px;
+	width: 50vw;
+	height: 30vh;
 	margin: 20px 0px 20px 0px;
 }
