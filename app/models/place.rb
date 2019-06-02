@@ -11,7 +11,9 @@ class Place < ApplicationRecord
 	validates :address, presence: true, length: { maximum: 75,  minimum: 10 }
 	validates :description, presence: true, length: { maximum: 500,  minimum: 10 }
 	validates_with PlaceValidator
+	
 	belongs_to :user
+	has_many :comments
 	
 	geocoded_by :address
 	before_validation :geocode, if: :address_changed?
