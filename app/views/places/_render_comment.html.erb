@@ -1,0 +1,43 @@
+<div class ="textured-border col-8 offset-2">
+	
+	<!-- toolbox above the comment -->
+	<div class="place-toolbar">
+		<!-- options for logged-in user only -->
+		<% if user_signed_in? %>
+			<% if current_user.id == comment.user_id %>
+				
+				<i class="fa fa-edit active_link"></i>
+			
+				<hr class="vertical">
+
+				<%= link_to comment_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} do %>
+					<i class="fa fa-trash active_link"></i>
+			 	<% end %>
+
+			<% else %>
+					<i class="fa fa-edit grey-transperant"></i>
+
+					<hr class="vertical">
+
+					<i class="fa fa-trash grey-transperant"></i>
+			<% end %>
+		<% end %>
+
+		<hr class="vertical">
+
+		<!-- TODO determine ratings -->
+		<div class="rating">
+			<i class="fa fa-star accent-star"></i>
+			<i class="fa fa-star accent-star"></i>
+			<i class="fa fa-star-half accent-star" style="margin-right: -1px;"></i>
+			<i class="fa fa-star-half grey-star mirror grey-transperant"></i>
+			<i class="fa fa-star grey-star grey-transperant"></i>
+			<i class="fa fa-star grey-star grey-transperant"></i>
+		</div>	
+	</div>
+
+	<!-- the actual comment -->
+	<div class="booyah-box">
+		<p><%= comment.message %></p><br>
+	</div>
+</div>

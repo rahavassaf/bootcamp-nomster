@@ -9,14 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GEOCODER_API_KEY'] %>">
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GEOCODER_API_KEY'] %>">
     </script>
   </head>
 
   <body>
     <!-- navbar -->
     <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
-      <button class="navbar-toggler navbar-toggler-right accent-color-background" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right accent-color-background active_link" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -32,13 +32,13 @@
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <% if user_signed_in? %>
             <!-- signed in -->
-            <li class="nav-item">
+            <li class="nav-item active_link">
               <%= link_to new_place_path, class: 'nav-link accent-color dark-text-shadow' do %>
                 <i class="fa fa-plus-circle"></i> New Place
               <% end %>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active_link">
               <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-sign-out"></i> Sign Out
               <% end %>
@@ -46,13 +46,13 @@
             <!-- /signed in -->
           <% else %>
             <!-- not signed in -->
-            <li class="nav-item">
+            <li class="nav-item active_link">
               <%= link_to new_user_session_path, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-sign-in"></i> Sign In
               <% end %>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active_link">
               <%= link_to new_user_registration_path, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-user-plus"></i> Register
               <% end %>
@@ -83,7 +83,7 @@
     &nbsp;<br>
     &nbsp;<br>
     <div class="footer">
-      <a class="" type="button" data-toggle="collapse" data-target="#footercollapse" aria-controls="footercollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="active_link" type="button" data-toggle="collapse" data-target="#footercollapse" aria-controls="footercollapse" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-angle-double-up accent-color popup-double-up dark-text-shadow"></i>
       </a>
 

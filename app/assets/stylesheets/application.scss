@@ -271,3 +271,24 @@ h1, h2, h3, h4, h5, h6 {
 	height: 30vh;
 	margin: 20px 0px 20px 0px;
 }
+
+.plus_button {
+	width: 75px;
+	height: 75px;
+	position: fixed;
+	bottom: 65px;
+	right: 40px;
+	text-align: center;
+	font-size: 44px;
+	align-content: center;
+	padding: 0px;
+	margin: 0px;
+	background-color: #444445;
+	border: solid 3px #808084;
+	border-radius: 50%;
+	box-shadow: 10px 10px 10px 0 #111;
+}
+
+.active_link:hover {
+	filter: contrast(200%);
+}

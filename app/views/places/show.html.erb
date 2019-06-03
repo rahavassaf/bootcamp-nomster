@@ -1,1 +1,13 @@
+<%= render partial: "render_add_comment_modal", locals: {place: @place} %>
+
 <%= render partial: 'render_place', locals: {place: @place} %>
+
+<% @comments.each do |c| %>
+<%= render partial: 'render_comment', locals: {comment: c} %>
+<% end %>
+
+<%= link_to '#', data: {toggle: 'modal', target: "#add_comment_modal"} do %>		
+	<div class="plus_button accent-color active_link">
+		<i class="fa fa-plus"></i>
+	</div>
+<% end %>

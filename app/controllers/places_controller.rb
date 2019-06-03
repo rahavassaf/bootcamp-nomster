@@ -23,7 +23,8 @@ class PlacesController < ApplicationController
 	def show
 		@place = Place.find(params[:id])
 		@supress_self_link = true # avoid circular links in place_path
-		@render_map = true # whether to render the map
+		@comments = Comment.where(:place_id => params[:id]) || []
+		@new_comment = Comment.new
 	end
 
 	def edit
@@ -59,6 +60,10 @@ class PlacesController < ApplicationController
 		end
 
 		@place.destroy
+
+		# clean up comments which are now refering to a non existant place
+		Comment.where(:place_id => @place.id).destroy_all
+
 		redirect_to root_path
 	end
 
