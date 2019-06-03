@@ -11,7 +11,7 @@
 			<% if current_user.id == place.user_id %>
 
 				<%= link_to '#', data: {toggle: 'modal', target: "#edit_modal_#{place.id}"} do %>
-					<i class="fa fa-edit active_link"></i>
+					<i class="fa fa-edit active_link hover-scale"></i>
 				<% end %>
 
 				<!-- Edit via form instead of modal
@@ -23,7 +23,7 @@
 				<hr class="vertical">
 
 				<%= link_to place_path(:id => place.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} do %>
-					<i class="fa fa-trash active_link"></i>
+					<i class="fa fa-trash active_link hover-scale"></i>
 			 	<% end %>
 
 			<% else %>
@@ -37,8 +37,8 @@
 			<hr class="vertical">
 
 			<!-- #TODO check if the user liked this place -->
-			<i class="fa fa-heart red-heart active_link"></i>
-			<i class="fa fa-heart grey-transperant active_link"></i>
+			<i class="fa fa-heart red-heart active_link hover-scale"></i>
+			<i class="fa fa-heart grey-transperant active_link hover-scale"></i>
 
 			<hr class="vertical">
 
@@ -56,7 +56,7 @@
 			<%= render partial: "render_map_modal", locals: {place: place} %>
 
 			<%= link_to '#', data: {toggle: 'modal', target: "#map_modal_#{place.id}"} do %>
-				<i class="fa fa-map-marker active_link"></i>
+				<i class="fa fa-map-marker active_link hover-scale"></i>
 			<% end %>
 		<% else %>
 			<i class="fa fa-map-marker grey-transperant"></i>
@@ -67,7 +67,7 @@
 			<hr class="vertical">
 
 			<%= link_to place_path(:id => place.id) do %>
-				<i class="fa fa-external-link active_link"></i>
+				<i class="fa fa-external-link active_link hover-scale"></i>
 			<% end %>
 		<% end %>
 	</div>
@@ -85,7 +85,7 @@
 		<hr>
 
 	    <% if place.user.present? %>
-	      <p class="email"><%= place.user.email %></p>
+	      <p class="email_address"><%= place.user.email %></p>
 	    <% end %>
 	</div>
 </div>

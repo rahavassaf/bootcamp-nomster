@@ -155,6 +155,14 @@ body {
 	color: #6d98c7;
 }
 
+.hover-scale {
+	transition: transform 0.3s;
+}
+
+.hover-scale:hover {
+	transform: scale(1.25);
+}
+
 .grey-transperant {
 	color: #909090 !important;
 	opacity: 0.5;
@@ -226,6 +234,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bolder;
 	transform: scaleX(3.0);
 	-webkit-backface-visibility: hidden;
+	transition: transform 0.3s;
+}
+
+.popup-double-up:hover {
+	transform: scale(4.5, 1.5);
+	transition: transform 0.3s;
 }
 
 .dark-text-shadow {
@@ -280,8 +294,8 @@ h1, h2, h3, h4, h5, h6 {
 	width: 75px;
 	height: 75px;
 	position: fixed;
-	bottom: 45px;
-	right: 20px;
+	bottom: 65px;
+	right: 40px;
 	text-align: center;
 	font-size: 44px;
 	align-content: center;
@@ -296,6 +310,7 @@ h1, h2, h3, h4, h5, h6 {
 .active_link:hover {
 	filter: contrast(200%);
 }
+
 .address{
 	font-size: 14px;
 	font-family: 'Rubik', sans-serif;
@@ -309,7 +324,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Rubik', sans-serif;
 }
 
-.email {
+.email_address {
 	font-style: italic;
 	font-size: 14px;
 	font-family: 'Kaushan Script', cursive;
