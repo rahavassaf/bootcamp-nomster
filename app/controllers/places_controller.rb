@@ -61,7 +61,7 @@ class PlacesController < ApplicationController
 
 		@place.destroy
 
-		# clean up comments which are now refering to a non existant place
+		# clean up orphaned comments
 		Comment.where(:place_id => @place.id).destroy_all
 
 		redirect_to root_path

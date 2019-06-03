@@ -8,7 +8,7 @@
 
       <%= simple_form_for @new_comment, url:  place_comments_path(@place) do |f| %>
       <%= f.input :message %>
-      <%= f.input :rating %>
+      <%= f.input :rating, collection: {'Five Stars': 5, 'Four Stars': 4, 'Three Stars': 3, 'Two Stars': 2, 'One Star': 1} %>
       <br>
       <div style="align-content: center; text-align: center;">
           <%= f.submit 'Create', class: 'btn btn-primary' %>

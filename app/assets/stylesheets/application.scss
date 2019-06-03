@@ -16,6 +16,10 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+
 @import "font-awesome";
 
 ::selection {
@@ -291,4 +295,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .active_link:hover {
 	filter: contrast(200%);
+}
+.address{
+	font-size: 14px;
+	font-family: 'Rubik', sans-serif;
+	right: 0px;
+	position: relative;
+	text-align: right;
+}
+
+.message {
+	font-size: 18px;
+	font-family: 'Rubik', sans-serif;
+}
+
+.email {
+	font-style: italic;
+	font-size: 14px;
+	font-family: 'Kaushan Script', cursive;
+}
+
+.title{
+	font-family: 'Archivo Black', sans-serif;
+	font-size: 30px;
+	color: #6d98c7;
 }

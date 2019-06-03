@@ -1,0 +1,21 @@
+<div class="rating">
+
+<% rating = (2 * rating).round / 2 %>
+<%= rating %>
+
+<% (1..5).each do |i| %>
+
+	
+	<% if i <= rating %>
+		<i class="fa fa-star accent-star"></i>
+
+	<% elsif i == rating - 0.5 %>
+		<i class="fa fa-star-half accent-star" style="margin-right: -1px;"></i>
+		<i class="fa fa-star-half grey-star mirror grey-transperant"></i>
+
+	<% else %>
+		<i class="fa fa-star grey-star grey-transperant"></i>
+
+	<% end %>
+<% end %>
+</div>

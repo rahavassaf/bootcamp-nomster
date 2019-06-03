@@ -4,9 +4,15 @@ class CommentsController < ApplicationController
 
 	def create
 		@place = Place.find(params[:place_id])
-		@place.comments.create(comment_params.merge(user: current_user))
+		@comment = @place.comments.create(comment_params.merge(user: current_user))
 
-		redirect_to place_path(@place)
+		if @comment.invalid?
+			flash[:error] = "Could not save: #{@comment.errors.messages}"
+			redirect_to request.referrer
+		else
+			flash[:success] = 'Saved Successfully'
+			redirect_to place_path(@place)
+		end
 	end
 
 	def destroy
@@ -23,7 +29,7 @@ class CommentsController < ApplicationController
 	#TODO
 	def edit
 	end
-	
+
 	#TODO
 	def update
 	end
