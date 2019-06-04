@@ -28,10 +28,30 @@ class CommentsController < ApplicationController
 
 	#TODO
 	def edit
+		@comment = Comment.find(params[:id])
+
+		if @comment.user != current_user
+			return render plain: 'Not Allowed', status: :forbidden
+		end
 	end
 
 	#TODO
 	def update
+		@comment = Comment.find(params[:id])
+
+		if @comment.user != current_user
+			return render plain: 'Not Allowed', status: :forbidden
+		end
+
+		@comment.update(comment_params)
+
+    	if @comment.invalid?
+    		flash[:error] = "Could not save: #{@comment.errors.messages}"
+		else
+			flash[:success] = 'Updated Successfully'
+		end
+
+		redirect_to request.referrer
 	end
 
 	private

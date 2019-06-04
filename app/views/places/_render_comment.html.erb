@@ -1,12 +1,15 @@
-<div class ="textured-border col-8 offset-2">
-	
-	<!-- toolbox above the comment -->
+<%= render partial: "render_edit_comment_modal", locals: {comment: comment} %>
+
+<div class ="col-12 col-sm-6">
+<div class="textured-border">
 	<div class="place-toolbar">
 		<!-- options for logged-in user only -->
 		<% if user_signed_in? %>
 			<% if current_user.id == comment.user_id %>
 				
+				<%= link_to '#', data: {toggle: 'modal', target: "#edit_comment_modal#{comment.id}"} do %>
 				<i class="fa fa-edit active_link hover-scale"></i>
+				<% end %>
 			
 				<hr class="vertical">
 
@@ -28,14 +31,17 @@
 		<%= render partial: 'render_rating', locals: {rating: comment.rating} %>	
 	</div>
 
-	<!-- the actual comment -->
 	<div class="booyah-box">
-		<p class="message"><%= comment.message %></p><br>
-
+		<div class="message"><%= comment.message %></div>
+		
 		<hr>
 		
 		<% if comment.user.present? %>
-	      <p class="email_address"><%= comment.user.email %></p>
+        <div style="display: inline-block; width: 100%;">
+          <div class="email_address"><%= comment.user.email %></div>
+	      <div class="date"><%= comment.created_at.strftime("%b %e %Y") %></div>
+	    </div>
 	    <% end %>
 	</div>
+</div>
 </div>

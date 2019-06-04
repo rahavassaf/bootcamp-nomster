@@ -1,0 +1,25 @@
+<div class="modal modal-wide fade" id="edit_comment_modal<%= comment.id %>" tabindex="-1" role="dialog" aria-labelledby="edit_comment_modal<%= comment.id %>" aria-hidden="true" style="padding:0px;">
+<div class="textured-border" style="margin: 0px;">
+  <div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:20px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="edit_comment_modal<%= comment.id %>">Enter Your Comment</h4>
+      </div>
+
+      <%= simple_form_for comment do |f| %>
+      <%= f.input :message, :input_html => { :value => comment.message } %>
+      <%= f.input :rating, collection: {'Five Stars': 5, 'Four Stars': 4, 'Three Stars': 3, 'Two Stars': 2, 'One Star': 1}, :input_html => { :value => comment.rating } %>
+      <br>
+      <div style="align-content: center; text-align: center;">
+          <%= f.submit 'Update', class: 'btn btn-primary' %>
+          &nbsp;
+
+          <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+            Cancel
+          </button>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

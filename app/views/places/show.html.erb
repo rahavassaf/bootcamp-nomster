@@ -2,9 +2,11 @@
 
 <%= render partial: 'render_place', locals: {place: @place} %>
 
+<div class="row">
 <% @comments.each do |c| %>
 <%= render partial: 'render_comment', locals: {comment: c} %>
 <% end %>
+</div>
 
 <%= link_to '#', data: {toggle: 'modal', target: "#add_comment_modal"} do %>		
 	<div class="plus_button accent-color active_link hover-scale">

@@ -24,6 +24,7 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
 		@supress_self_link = true # avoid circular links in place_path
 		@comments = Comment.where(:place_id => params[:id]) || []
+		#TODO prevent users from submitting multiple comments for the same place
 		@new_comment = Comment.new
 	end
 

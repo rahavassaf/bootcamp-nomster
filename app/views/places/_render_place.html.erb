@@ -75,7 +75,7 @@
 	<!-- the actual place -->
 	<div class="booyah-box">
 		<div style="display: inline-block; width: 100%;">
-			<div class="title"><%= place.name %></div>
+			<div class="title accent-color"><%= place.name %></div>
 			<div class="address"><%= place.address %></div>
 		</div>
 		<hr>
@@ -85,7 +85,10 @@
 		<hr>
 
 	    <% if place.user.present? %>
-	      <p class="email_address"><%= place.user.email %></p>
+	    <div style="display: inline-block; width: 100%;">
+	      <div class="email_address"><%= place.user.email %></div>
+	      <div class="date"><%= place.created_at.strftime("%b %e %Y") %></div>
+	    </div>
 	    <% end %>
 	</div>
 </div>
