@@ -1,7 +1,5 @@
 <%= render partial: "render_edit_modal", locals: {place: place} %>
 
-<% rating = Comment.where(:place_id => place.id).average(:rating) || -1 %>
-
 <div class ="textured-border col-10 offset-1">
 	
 	<!-- toolbox above the place -->
@@ -51,21 +49,7 @@
 			<hr class="vertical">
 		<% end %>
 
-		<!-- Google map -->
-		<% if place.latitude.present? && place.longitude.present? %>
-			<%= render partial: "render_map_modal", locals: {place: place} %>
-
-			<%= link_to '#', data: {toggle: 'modal', target: "#map_modal_#{place.id}"} do %>
-				<i class="fa fa-map-marker active_link hover-scale"></i>
-			<% end %>
-		<% else %>
-			<i class="fa fa-map-marker grey-transperant"></i>
-		<% end %>
-		<!-- / Google map -->
-
 		<% unless defined?(@supress_self_link) && @supress_self_link %>
-			<hr class="vertical">
-
 			<%= link_to place_path(:id => place.id) do %>
 				<i class="fa fa-external-link active_link hover-scale"></i>
 			<% end %>
@@ -76,14 +60,31 @@
 	<div class="booyah-box">
 		<div style="display: inline-block; width: 100%;">
 			<div class="title accent-color"><%= place.name %></div>
-			<div class="address"><%= place.address %></div>
+			
+			<% if place.latitude.present? && place.longitude.present? %>
+				<%= render partial: "render_map_modal", locals: {place: place} %>
+				<div class="address active_link accent-color">
+				<%= link_to '#', data: {toggle: 'modal', target: "#map_modal_#{place.id}"}, class: "active_link accent-color" do %>
+					<%= place.address %>
+					<i class="fa fa-map-marker hover-scale" style="font-size: 18px;"></i>
+				<% end %>
+			<% else %>
+				<div class="address">
+				<%= place.address %>
+				<i class="fa fa-map-marker grey-transperant" style="font-size: 18px;"></i>
+			<% end %>
+			</div>
 		</div>
+
 		<hr>
 
 		<p class="message"><%= place.description %></p><br>
+		
+		<% if defined?(comment) && comment != nil %>
+			<%= render partial: "render_comment_snippet", locals: {comment: comment} %>
+		<% end %>
 
 		<hr>
-
 	    <% if place.user.present? %>
 	    <div style="display: inline-block; width: 100%;">
 	      <div class="email_address"><%= place.user.email %></div>

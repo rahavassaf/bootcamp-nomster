@@ -1,11 +1,11 @@
 <%= render partial: "render_add_comment_modal", locals: {place: @place} %>
 
-<%= render partial: 'render_place', locals: {place: @place} %>
+<%= render partial: 'render_place', locals: {place: @place, rating: @rating} %>
 
-<div class="row">
+<div class="row" style="margin-right: 20px; margin-left: 20px;">
 <% @comments.each do |c| %>
-<%= render partial: 'render_comment', locals: {comment: c} %>
-<% end %>
+	<%= render partial: 'render_comment', locals: {comment: c} %>
+	<% end %>
 </div>
 
 <%= link_to '#', data: {toggle: 'modal', target: "#add_comment_modal"} do %>		

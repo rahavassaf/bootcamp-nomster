@@ -1,7 +1,7 @@
 <%= render partial: 'render_pagination' %>
 
 <% @places.each  do |place| %>
-	<%= render partial: "render_place", locals: {place: place} %>
+	<%= render partial: "render_place", locals: {place: place, rating: @ratings[place.id], comment: place.comments.last} %>
 <% end %>
 
 <%= render partial: 'render_pagination' %>

@@ -319,6 +319,13 @@ h1, h2, h3, h4, h5, h6 {
 	top: 20px;
 }
 
+.address:hover {
+	a {
+		text-decoration: none !important;
+		color: inherit !important;
+	}
+}
+
 .message {
 	font-size: 18px;
 	font-family: 'Rubik', sans-serif;
@@ -341,4 +348,53 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 14px;
 	font-family: 'Rubik', sans-serif;
 	float: right;
+}
+
+.snippet_message {
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+	float: left;
+}
+
+.snippet_email {
+	font-style: italic;
+	font-size: 14px;
+	font-family: 'Kaushan Script', cursive;
+	float: left;
+}
+
+.snippet_date {
+	font-size: 12px;
+	font-family: 'Rubik', sans-serif;
+	float: right;
+}
+
+.snippet_rating {
+	
+	margin-right: 10px;
+	font-size: 12px;
+	position: absolute;
+	right: 15px;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 0.5em 5px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  border-radius: 5px;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
 }

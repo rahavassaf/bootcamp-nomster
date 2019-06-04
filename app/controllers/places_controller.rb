@@ -3,6 +3,14 @@ class PlacesController < ApplicationController
 
 	def index
 		@places = Place.paginate(page: params[:page], per_page: 10)
+
+		# there's probably a cleaner sql/join way of doing this
+		# get each place's average rating and last comment
+		@ratings = {}
+		@places.each { |p|
+			@ratings[p.id] = Comment.where(:place_id => p.id).average(:rating) || -1
+		}
+
 	end
 
 	def new
@@ -24,6 +32,7 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
 		@supress_self_link = true # avoid circular links in place_path
 		@comments = Comment.where(:place_id => params[:id]) || []
+		@rating = Comment.where(:place_id => params[:id]).average(:rating) || -1
 		#TODO prevent users from submitting multiple comments for the same place
 		@new_comment = Comment.new
 	end
@@ -60,10 +69,10 @@ class PlacesController < ApplicationController
 			return render plain: 'Not Allowed', status: :forbidden
 		end
 
-		@place.destroy
-
 		# clean up orphaned comments
-		Comment.where(:place_id => @place.id).destroy_all
+		@place.comments.destroy_all
+		
+		@place.destroy
 
 		redirect_to root_path
 	end
