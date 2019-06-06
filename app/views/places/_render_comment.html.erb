@@ -32,15 +32,14 @@
 	</div>
 
 	<div class="booyah-box">
-		<div class="message"><%= comment.message %></div>
-		
-		<hr>
-		
+		<p class="message"><%= comment.message %></p>
+
 		<% if comment.user.present? %>
-        <div style="display: inline-block; width: 100%;">
-          <div class="email_address"><%= comment.user.email %></div>
-	      <div class="date"><%= comment.created_at.strftime("%b %e %Y") %></div>
-	    </div>
+			<hr>
+	        <div style="display: inline-block; width: 100%;">
+	          <div class="email_address"><%= comment.user.email %></div>
+		      <div class="date"><%= comment.created_at.strftime("%b %e %Y") %></div>
+		    </div>
 	    <% end %>
 	</div>
 </div>

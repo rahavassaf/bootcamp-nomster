@@ -108,9 +108,6 @@ body {
 	border-color: #444445 #808084 #808084 #444445;
 	border-radius: 5px;
 	padding: 20px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .pagination {
@@ -285,8 +282,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .map {
 	border-radius: 5px;
-	width: 50vw;
-	height: 30vh;
 	margin: 20px 0px 20px 0px;
 }
 
@@ -330,8 +325,6 @@ h1, h2, h3, h4, h5, h6 {
 .message {
 	font-size: 18px;
 	font-family: 'Rubik', sans-serif;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .email_address {
@@ -358,10 +351,9 @@ h1, h2, h3, h4, h5, h6 {
 .snippet_message {
 	font-size: 16px;
 	font-family: 'Rubik', sans-serif;
-	float: left;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	width: 80%;
+	width: 90%;
 }
 
 .snippet_email {
@@ -378,10 +370,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .snippet_rating {	
-	margin-right: 15px;
 	font-size: 12px;
-	position: absolute;
-	right: 15px;
+	float: right;
 }
 
 blockquote {

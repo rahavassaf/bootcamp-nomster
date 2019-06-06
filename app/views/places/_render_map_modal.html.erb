@@ -1,13 +1,34 @@
+<div class="modal modal-wide fade" id="map_modal_<%= place.id %>" tabindex="-1" role="dialog" aria-labelledby="map_modal_<%= place.id %>" aria-hidden="true" style="padding:0px;">
+  <div class="textured-border" style="margin: 0px;">
+    <div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:20px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="map_modal_<%= place.id %>"><%= place.name %></h4>
+          </div>
+        
+    	  <div id="map<%= place.id %>" class="map embed-responsive embed-responsive-16by9"></div>
+        
+    	  <div style="align-content: center; text-align: center;">
+          <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+            Close
+          </button>
+    	  </div>
+        </div>
+    </div>
+  </div>
+</div>
+
 <script>
+
   var map<%= place.id %> = new google.maps.Map(document.getElementById("map<%= place.id %>"), {
     zoom: 10,
     center: {lat: <%= place.latitude %>, lng: <%= place.longitude %>},
-	zoomControl: true,
-	mapTypeControl: false,
-	scaleControl: true,
-	streetViewControl: false,
-	rotateControl: true,
-	fullscreenControl: false
+    zoomControl: true,
+    mapTypeControl: false,
+    scaleControl: true,
+    streetViewControl: false,
+    rotateControl: true,
+    fullscreenControl: false
   });
 
   var marker<%= place.id %> = new google.maps.Marker({
@@ -16,22 +37,3 @@
     title: "<%= place.name %>",
   });
 </script>
-
-<div class="modal modal-wide fade" id="map_modal_<%= place.id %>" tabindex="-1" role="dialog" aria-labelledby="map_modal_<%= place.id %>" aria-hidden="true" style="padding:0px;">
-<div class="textured-border" style="margin: 0px;">
-<div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:20px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="map_modal_<%= place.id %>"><%= place.name %></h4>
-      </div>
-	  <div id="map<%= place.id %>" class="map"></div>
-
-	  <div style="align-content: center; text-align: center;">
-          <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
-            Close
-          </button>
-	  </div>
-    </div>
-</div>
-</div>
-</div>

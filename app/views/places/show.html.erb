@@ -2,6 +2,7 @@
 
 <%= render partial: 'render_place', locals: {place: @place, rating: @rating} %>
 
+<!--TODO If there is only one comment, center it -->
 <div class="row" style="margin-right: 20px; margin-left: 20px;">
 <% @comments.each do |c| %>
 	<%= render partial: 'render_comment', locals: {comment: c} %>
