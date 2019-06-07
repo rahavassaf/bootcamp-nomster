@@ -2,7 +2,7 @@ class Photo < ApplicationRecord
 	belongs_to :user
 	belongs_to :place
 
-	mount_uploader :picture, PhotoUploader
+	mount_uploader :picture, PictureUploader
 
 	validates :caption, presence: true, length: { maximum: 50, minimum: 5 }
   	validates :user_id, presence: true, numericality: { only_integer: true, greater_than: 0 }

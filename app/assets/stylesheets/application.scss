@@ -302,6 +302,22 @@ h1, h2, h3, h4, h5, h6 {
 	box-shadow: 10px 10px 10px 0 #111;
 }
 
+.photo_add_button {
+	width: 50px;
+	height: 50px;
+	position: relative;
+	right: 0px;
+	text-align: center;
+	font-size: 25px;
+	align-content: center;
+	padding: 2px 0px 0px 0px;
+	margin: 0px;
+	background-color: #444445;
+	border: solid 3px #808084;
+	border-radius: 50%;
+	box-shadow: 10px 10px 10px 0 #111;
+}
+
 .active_link:hover {
 	filter: contrast(200%);
 	cursor: pointer;
@@ -394,4 +410,23 @@ blockquote:before {
 
 blockquote p {
   display: inline;
+}
+
+
+img.picture-thumbnail {
+	display: block;
+	max-width: 150px;
+	max-height: 150px;
+	width: auto;
+	height: auto;
+	box-shadow: 4px 4px 10px #111;
+	transition: transform 0.3s;
+	border: 2px #fff solid;
+	margin: 2px;
+}
+
+img.picture-thumbnail:hover {
+	transform: scale(1.2);
+	transition: transform 0.3s;
+	cursor: pointer;
 }

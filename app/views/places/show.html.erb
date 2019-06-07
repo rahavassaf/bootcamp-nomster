@@ -1,6 +1,6 @@
 <%= render partial: "render_add_comment_modal", locals: {place: @place} %>
 
-<%= render partial: 'render_place', locals: {place: @place, rating: @rating} %>
+<%= render partial: 'render_place', locals: {place: @place, rating: @rating, gallery: true} %>
 
 <!--TODO If there is only one comment, center it -->
 <div class="row" style="margin-right: 20px; margin-left: 20px;">
@@ -9,8 +9,10 @@
 	<% end %>
 </div>
 
-<%= link_to '#', data: {toggle: 'modal', target: "#add_comment_modal"} do %>		
-	<div class="plus_button accent-color active_link hover-scale">
-		<i class="fa fa-plus"></i>
-	</div>
+<% if user_signed_in? %>
+	<%= link_to '#', data: {toggle: 'modal', target: "#add_comment_modal"} do %>		
+		<div class="plus_button accent-color active_link hover-scale">
+			<i class="fa fa-plus"></i>
+		</div>
+	<% end %>
 <% end %>
