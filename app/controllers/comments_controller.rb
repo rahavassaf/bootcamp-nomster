@@ -26,7 +26,6 @@ class CommentsController < ApplicationController
 		redirect_to request.referrer
 	end
 
-	#TODO
 	def edit
 		@comment = Comment.find(params[:id])
 
@@ -35,7 +34,6 @@ class CommentsController < ApplicationController
 		end
 	end
 
-	#TODO
 	def update
 		@comment = Comment.find(params[:id])
 

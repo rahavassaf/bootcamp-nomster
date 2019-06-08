@@ -9,13 +9,13 @@
 		<!-- if displayed outside the place's context, link back to the place -->
 		<% if defined?(context) && context %>
 			<%= link_to place_path(:id => photo.place_id), :class => "active_link hover-scale accent-color" do %>
-				&nbsp;<i class="fa fa-link active_link hover-scale"></i>
+				&nbsp;<i class="fa fa-link active_link hover-scale" data-toggle="tooltip" title="<%= photo.place.name %>"></i>
 			<% end %>
 		<% end %>
 
 		<% if user_signed_in? && current_user.id == photo.user_id %>
 			<%= link_to photo_path(:id => photo.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} do %>
-				&nbsp;<i class="fa fa-trash active_link hover-scale"></i>
+				&nbsp;<i class="fa fa-trash active_link hover-scale" data-toggle="tooltip" title="Delete"></i>
 		 	<% end %>
 	 	<% end %>
  	</div>
@@ -28,9 +28,11 @@
 			<div class="modal-content">
 				<%= image_tag photo.picture.url, :class => "img-fluid" %>
 
-				<button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+				
+				<button type="button" class="btn btn-warning top-right-absolute" data-dismiss="modal" aria-label="Close">
 				Close
 				</button>
+				
 			</div>
 		</div>
 	</div>

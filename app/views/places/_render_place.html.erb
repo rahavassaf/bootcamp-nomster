@@ -10,13 +10,13 @@
 			<% if current_user.id == place.user_id %>
 
 				<%= link_to '#', data: {toggle: 'modal', target: "#edit_modal_#{place.id}"} do %>
-					<i class="fa fa-edit active_link hover-scale"></i>
+					<i class="fa fa-edit active_link hover-scale" data-toggle="tooltip" title="Edit"></i>
 				<% end %>
 
 				<hr class="vertical">
 
 				<%= link_to place_path(:id => place.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} do %>
-					<i class="fa fa-trash active_link hover-scale"></i>
+					<i class="fa fa-trash active_link hover-scale" data-toggle="tooltip" title="Delete"></i>
 			 	<% end %>
 
 			<% else %>
@@ -30,8 +30,8 @@
 			<hr class="vertical">
 
 			<!-- #TODO check if the user liked this place -->
-			<i class="fa fa-heart red-heart active_link hover-scale"></i>
-			<i class="fa fa-heart grey-transperant active_link hover-scale"></i>
+			<i class="fa fa-heart red-heart active_link hover-scale" data-toggle="tooltip" title="Like!"></i>
+			<i class="fa fa-heart grey-transperant active_link hover-scale" data-toggle="tooltip" title="Un-Like :("></i>
 		<% end %>
 
 		<!-- options for all user -->
@@ -45,7 +45,7 @@
 			<hr class="vertical">
 
 			<%= link_to place_path(:id => place.id) do %>
-				<i class="fa fa-external-link active_link hover-scale"></i>
+				<i class="fa fa-external-link active_link hover-scale" data-toggle="tooltip" title="Details"></i>
 			<% end %>
 		<% end %>
 	</div>
@@ -55,40 +55,40 @@
 	<!-- the actual place -->
 	<div class="booyah-box">
 		
-		<div class="title accent-color col-12"><%= place.name %></div>
-		
-		<% if place.latitude.present? && place.longitude.present? %>
-			<%= render partial: "render_map_modal", locals: {place: place} %>
-
-			<div class="address active_link accent-color col-12">
-				<%= link_to '#', data: {toggle: 'modal', target: "#map_modal_#{place.id}"}, class: "active_link accent-color" do %>
+		<div class="row">
+			<div class="col-8">
+				<div class="title accent-color"><%= place.name %></div>
+				
+				<% if place.latitude.present? && place.longitude.present? %>
+					<%= render partial: "render_map_modal", locals: {place: place} %>
+					
+					<%= link_to '#', data: {toggle: 'modal', target: "#map_modal_#{place.id}"}, class: "active_link accent-color address" do %>
+						<%= place.address %>
+						<i class="fa fa-map-marker hover-scale" style="font-size: 18px;"></i>
+					<% end %>
+				<% else %>
 					<%= place.address %>
-					<i class="fa fa-map-marker hover-scale" style="font-size: 18px;"></i>
+					<i class="fa fa-map-marker grey-transperant" style="font-size: 18px;"></i>
 				<% end %>
 			</div>
-		<% else %>
-			<div class="address col-12">
-				<%= place.address %>
-				<i class="fa fa-map-marker grey-transperant" style="font-size: 18px;"></i>
-			</div>
-		<% end %>
+
+			<% if (!defined?(gallery) || !gallery) && place.photos.first.present? %>
+				<div class="float-right">
+					<%= render partial: "render_thumbnail", locals: {photo: place.photos.first} %>
+				</div>
+			<% end %>
+		</div>
 
 		<hr>
 
-		<div class="col-12">
+		<div class="col-10">
 			<p class="message"><%= place.description %></p><br>
 		</div>
-
 		
-		<div class="row">
-			<% if defined?(comment) && comment && place.comments.first.present? %>
-				<%= render partial: "render_comment_snippet", locals: {comment: place.comments.last} %>
-			<% end %>
-
-			<% if (!defined?(gallery) || !gallery) && place.photos.first.present? %>
-				<%= render partial: "render_thumbnail", locals: {photo: place.photos.first} %>
-			<% end %>
-		</div>
+		
+		<% if defined?(comment) && comment && place.comments.first.present? %>
+			<%= render partial: "render_comment_snippet", locals: {comment: place.comments.last} %>
+		<% end %>
 
 		<hr>
 

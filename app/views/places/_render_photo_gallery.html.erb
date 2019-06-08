@@ -10,7 +10,7 @@
 	<% if user_signed_in? %>
 	<div class="col-1">
 		<%= link_to '#', data: {toggle: 'modal', target: "#add_photo_modal"} do %>		
-			<div class="photo_add_button accent-color active_link hover-scale">
+			<div class="photo_add_button accent-color active_link hover-scale" data-toggle="tooltip" title="Add Photo">
 				<i class="fa fa-camera"></i>
 			</div>
 		<% end %>

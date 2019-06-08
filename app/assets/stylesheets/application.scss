@@ -122,6 +122,7 @@ body {
 	  	color: #6d98c7;
 	  	font-weight: bolder;
 	  	align-content: center;
+	  	text-decoration: none !important;
 	}
 
 	.next_page {
@@ -135,17 +136,22 @@ body {
 	}
 
 	.disabled {
-		border-color:  #f07074 #844445 #844445 #f07074 !important;
-		box-shadow: 10px 10px 10px 0 #111,
-					0px 2px 10px 0 #844445,
-					0px -2px 10px 0 #844445;
+		color: #909090;
 	}
 
 	.current {
 		border-color:  #ccc #aaa #aaa #ccc !important;
-		box-shadow: 10px 10px 10px 0 #111,
-					0px 2px 10px 0 #ccc,
-					0px -2px 10px 0 #ccc;
+		box-shadow: 0px 4px 5px 0 #999,
+					0px -4px 5px 0 #999,
+					4px 0px 5px 0 #999,
+					-4px 0px 5px 0 #999,
+					10px 10px 10px 0 #111;
+	}
+}
+
+.pagination:hover {
+	a {
+		text-decoration: none;
 	}
 }
 
@@ -277,6 +283,16 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0px;
 	max-width: 60vw;
 	overflow: hidden;
+}
+
+
+.top-right-absolute {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: auto;
+	height: auto;
+	padding: 5px;
 }
 
 .map {
@@ -427,7 +443,7 @@ img.picture-thumbnail {
 	box-shadow: 4px 4px 10px #111;
 	transition: transform 0.3s;
 	border: 2px #fff solid;
-	margin: 5px;
+	margin: 10px;
 	z-index: 1000;
 }
 
@@ -436,4 +452,12 @@ img.picture-thumbnail:hover {
 	transition: transform 0.3s;
 	cursor: pointer;
 	z-index: 1000;
+}
+
+.thumbnail-toolbar {
+	display: none;
+}
+
+.thumbnail-toolbar:hover {
+	display: inline;
 }

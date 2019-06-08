@@ -1,7 +1,7 @@
 <div class="modal modal-wide fade" id="map_modal_<%= place.id %>" tabindex="-1" role="dialog" aria-labelledby="map_modal_<%= place.id %>" aria-hidden="true" style="padding:0px;">
   <div class="textured-border" style="margin: 0px;">
     <div class="modal-dialog modal-dialog-wide" role="document" style="padding:10px; background-color: transparent;">
-        <div class="modal-content" style="background-color: transparent;">
+        <div class="modal-content" style="background-color: transparent; padding: 0px;">
           <div style="background-color: transparent;">
             <div class="modal-title accent-color title" id="map_modal_<%= place.id %>"><%= place.name %></div>
             
@@ -10,11 +10,11 @@
         
     	  <div id="map<%= place.id %>" class="map embed-responsive embed-responsive-16by9"></div>
         
-    	  <div style="align-content: center; text-align: center;">
-          <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
-            Close
-          </button>
-    	  </div>
+    	  
+        <button type="button" class="btn btn-warning top-right-absolute" data-dismiss="modal" aria-label="Close">
+          Close
+        </button>
+    	  
         </div>
     </div>
   </div>

@@ -11,7 +11,7 @@
 
 <% if user_signed_in? %>
 	<%= link_to '#', data: {toggle: 'modal', target: "#add_comment_modal"} do %>		
-		<div class="plus_button accent-color active_link hover-scale">
+		<div class="plus_button accent-color active_link hover-scale" data-toggle="tooltip" title="Add Comment">
 			<i class="fa fa-plus"></i>
 		</div>
 	<% end %>
