@@ -61,9 +61,15 @@
             </li>
             <!-- /not signed in -->
           <% end %>
+
+
+          <li class="nav-item active_link">
+            <%= link_to photos_path, class: "nav-link accent-color dark-text-shadow" do %>
+              <i class="fa fa-camera"></i> All Photos
+            <% end %>
+          </li>
+
         </ul>
-
-
       </div>
     </nav>
     <!-- /navbar -->

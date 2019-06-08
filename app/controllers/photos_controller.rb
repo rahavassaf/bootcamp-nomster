@@ -1,6 +1,10 @@
 class PhotosController < ApplicationController
 	before_action :authenticate_user!
 
+	def index
+		@photos = Photo.all
+	end
+
 	def create
 		@place = Place.find(params[:place_id])
 		@photo = @place.photos.create(photo_params.merge(user: current_user))

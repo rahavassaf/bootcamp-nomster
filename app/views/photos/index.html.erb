@@ -1,0 +1,7 @@
+<div class="col-11 offset-1">
+	<div class="row">
+		<% @photos.each do |p| %>
+			<%= render partial: "places/render_thumbnail", locals: {photo: p, context: true} %>
+		<% end %>
+	</div>
+</div>
