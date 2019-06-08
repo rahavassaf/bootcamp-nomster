@@ -32,14 +32,12 @@
 			<!-- #TODO check if the user liked this place -->
 			<i class="fa fa-heart red-heart active_link hover-scale"></i>
 			<i class="fa fa-heart grey-transperant active_link hover-scale"></i>
-
-			<hr class="vertical">
-
 		<% end %>
 
 		<!-- options for all user -->
 
 		<% if rating > 0 %>
+			<hr class="vertical">
 			<%= render partial: 'render_rating', locals: {rating: rating} %>
 		<% end %>
 

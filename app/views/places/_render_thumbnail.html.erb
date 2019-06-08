@@ -1,12 +1,25 @@
-<%= link_to '#', data: {toggle: 'modal', target: "#photo_modal_#{photo.id}"} do %>
-	<div cass="col-1">
+<div cass="col-1">
+	<%= link_to '#', data: {toggle: 'modal', target: "#photo_modal_#{photo.id}"} do %>
 		<%= image_tag photo.picture.url, :class => "picture-thumbnail" %>
-	</div>
-<% end %>
+	<% end %>
 
-<div class="modal modal-wide fade" id="photo_modal_<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="photo_modal_<%= photo.id %>" aria-hidden="true" style="padding:0px; max-width: 95vw;">
+	<div style="display: inline-block; width: 100%;">
+		<div class="caption"><%= photo.caption %></div>
+
+		<% if user_signed_in? && current_user.id == photo.user_id %>
+			<div style="float: right;">
+				<%= link_to photo_path(:id => photo.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} do %>
+					<i class="fa fa-trash active_link hover-scale"></i>
+			 	<% end %>
+		 	</div>
+	 	<% end %>
+ 	</div>
+</div>
+
+
+<div class="modal modal-wide fade" id="photo_modal_<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="photo_modal_<%= photo.id %>" aria-hidden="true" style="padding:0px; max-width: 95vw; max-height: 95vh;">
 	<div class="textured-border" style="margin: 0px;">
-		<div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:0px; max-width: 95vw;">
+		<div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:0px; max-width: 95vw; max-height: 95vh;">
 			<div class="modal-content">
 				<%= image_tag photo.picture.url, :class => "img-fluid" %>
 

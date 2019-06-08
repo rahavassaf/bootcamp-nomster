@@ -1,9 +1,11 @@
 <div class="modal modal-wide fade" id="map_modal_<%= place.id %>" tabindex="-1" role="dialog" aria-labelledby="map_modal_<%= place.id %>" aria-hidden="true" style="padding:0px;">
   <div class="textured-border" style="margin: 0px;">
-    <div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:20px;">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="map_modal_<%= place.id %>"><%= place.name %></h4>
+    <div class="modal-dialog modal-dialog-wide" role="document" style="padding:10px; background-color: transparent;">
+        <div class="modal-content" style="background-color: transparent;">
+          <div style="background-color: transparent;">
+            <div class="modal-title accent-color title" id="map_modal_<%= place.id %>"><%= place.name %></div>
+            
+            <div class="accent-color address" id="map_modal_<%= place.id %>"><%= place.address %></div>
           </div>
         
     	  <div id="map<%= place.id %>" class="map embed-responsive embed-responsive-16by9"></div>
