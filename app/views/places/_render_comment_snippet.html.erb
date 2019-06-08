@@ -1,16 +1,16 @@
 <div class="col-12 col-sm-6">
 
-<blockquote>
-	<div class="snippet_rating">
-		<%= render partial: 'render_rating', locals: {rating: comment.rating} %>
-	</div>
+	<blockquote>
+		<div class="snippet_rating">
+			<%= render partial: 'render_rating', locals: {rating: comment.rating} %>
+		</div>
 
-	<div class="snippet_message"><%= comment.message %></div>
+		<div class="snippet_message"><%= comment.message %></div>
 
-	<div style="display: inline-block; width: 100%;">
-		<div class="snippet_email"><%= comment.user.email %></div>
-		<div class="snippet_date"><%= comment.created_at.strftime("%b %e %Y") %></div>
-	</div>
-</blockquote>
+		<div style="display: inline-block; width: 100%;">
+			<div class="snippet_email"><%= comment.user.email %></div>
+			<div class="snippet_date"><%= comment.created_at.strftime("%b %e %Y") %></div>
+		</div>
+	</blockquote>
 
 </div>

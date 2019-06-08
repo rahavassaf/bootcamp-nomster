@@ -272,7 +272,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal-dialog-wide, .modal-wide {
-	max-width: none;
 	max-height: none;
 	margin: 0px;
 	padding: 0px;
@@ -326,8 +325,6 @@ h1, h2, h3, h4, h5, h6 {
 .address{
 	font-size: 14px;
 	font-family: 'Rubik', sans-serif;
-	float: right;
-	position: relative;
 	top: 20px;
 }
 
@@ -353,7 +350,6 @@ h1, h2, h3, h4, h5, h6 {
 .title{
 	font-family: 'Archivo Black', sans-serif;
 	font-size: 30px;
-	float: left;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -422,11 +418,13 @@ img.picture-thumbnail {
 	box-shadow: 4px 4px 10px #111;
 	transition: transform 0.3s;
 	border: 2px #fff solid;
-	margin: 2px;
+	margin: 5px;
+	z-index: 1000;
 }
 
 img.picture-thumbnail:hover {
 	transform: scale(1.2);
 	transition: transform 0.3s;
 	cursor: pointer;
+	z-index: 1000;
 }

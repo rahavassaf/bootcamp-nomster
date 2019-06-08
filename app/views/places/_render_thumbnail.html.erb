@@ -1,0 +1,19 @@
+<%= link_to '#', data: {toggle: 'modal', target: "#photo_modal_#{photo.id}"} do %>
+	<div cass="col-1">
+		<%= image_tag photo.picture.url, :class => "picture-thumbnail" %>
+	</div>
+<% end %>
+
+<div class="modal modal-wide fade" id="photo_modal_<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="photo_modal_<%= photo.id %>" aria-hidden="true" style="padding:0px; max-width: 95vw;">
+	<div class="textured-border" style="margin: 0px;">
+		<div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:0px; max-width: 95vw;">
+			<div class="modal-content">
+				<%= image_tag photo.picture.url, :class => "img-fluid" %>
+
+				<button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+				Close
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

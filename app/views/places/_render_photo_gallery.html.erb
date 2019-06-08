@@ -2,9 +2,7 @@
 	<!-- the gallery -->
 	<div class="col-11 p-2 row">
 		<% place.photos.each do |f| %>
-			<div cass="col-1">
-				<%= image_tag f.picture.url, :class => "picture-thumbnail" %>
-			</div>
+			<%= render partial: "render_thumbnail", locals: {photo: f} %>
 		<% end %>
 	</div>
 
