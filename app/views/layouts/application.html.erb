@@ -32,14 +32,31 @@
 
       <div class="collapse navbar-collapse" id="navbarToggle">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <!-- home -->
+          <li class="nav-item active_link">
+            <%= link_to root_path, class: "nav-link accent-color dark-text-shadow" do %>
+              <i class="fa fa-home"></i> Home
+            <% end %>
+          </li>
+
+          <!-- gallery -->
+          <li class="nav-item active_link">
+            <%= link_to photos_path, class: "nav-link accent-color dark-text-shadow" do %>
+              <i class="fa fa-camera"></i> Photo Gallery
+            <% end %>
+          </li>
+
           <% if user_signed_in? %>
             <!-- signed in -->
+
+            <!-- new place -->
             <li class="nav-item active_link">
               <%= link_to new_place_path, class: 'nav-link accent-color dark-text-shadow' do %>
                 <i class="fa fa-plus-circle"></i> New Place
               <% end %>
             </li>
 
+            <!-- sign out -->
             <li class="nav-item active_link">
               <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-sign-out"></i> Sign Out
@@ -48,12 +65,15 @@
             <!-- /signed in -->
           <% else %>
             <!-- not signed in -->
+
+            <!-- sign in -->
             <li class="nav-item active_link">
               <%= link_to new_user_session_path, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-sign-in"></i> Sign In
               <% end %>
             </li>
 
+            <!-- register -->
             <li class="nav-item active_link">
               <%= link_to new_user_registration_path, class: "nav-link accent-color dark-text-shadow" do %>
                 <i class="fa fa-user-plus"></i> Register
@@ -61,13 +81,6 @@
             </li>
             <!-- /not signed in -->
           <% end %>
-
-
-          <li class="nav-item active_link">
-            <%= link_to photos_path, class: "nav-link accent-color dark-text-shadow" do %>
-              <i class="fa fa-camera"></i> Photo Gallery
-            <% end %>
-          </li>
 
         </ul>
       </div>

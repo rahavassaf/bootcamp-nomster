@@ -1,9 +1,18 @@
 &nbsp;<br>
 
+<div class ="col-10 offset-1" style="padding: 0;">
+	<%= will_paginate @photos, previous_label: '<', next_label: '>' %>
+</div>
+
+
 <div class="col-11 offset-1">
 	<div class="row">
 		<% @photos.each do |p| %>
 			<%= render partial: "places/render_thumbnail", locals: {photo: p, context: true} %>
 		<% end %>
 	</div>
+</div>
+
+<div class ="col-10 offset-1" style="padding: 0;">
+	<%= will_paginate @photos, previous_label: '<', next_label: '>' %>
 </div>

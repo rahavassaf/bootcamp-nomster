@@ -3,8 +3,8 @@
 		<%= image_tag photo.picture.thumb.url, :class => "picture-thumbnail" %>
 	<% end %>
 
-	<div style="display: inline-block; width: 100%;">
-		<div class="caption"><%= photo.caption %></div>
+	<div style="display: inline-block; width: 100%; max-width: 175px; max-height: 175px;">
+		<p class="caption"><%= photo.caption %></p>
 
 		<!-- if displayed outside the place's context, link back to the place -->
 		<% if defined?(context) && context %>
