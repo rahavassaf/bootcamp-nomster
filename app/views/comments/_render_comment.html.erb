@@ -1,4 +1,4 @@
-<%= render partial: "render_edit_comment_modal", locals: {comment: comment} %>
+<%= render partial: "comments/render_edit_comment_modal", locals: {comment: comment} %>
 
 <div class ="col-12 col-sm-6">
 <div class="textured-border">
@@ -28,7 +28,7 @@
 			<hr class="vertical">
 		<% end %>
 
-		<%= render partial: 'render_rating', locals: {rating: comment.rating} %>	
+		<%= render partial: 'places/render_rating', locals: {rating: comment.rating} %>	
 	</div>
 
 	<div class="booyah-box">

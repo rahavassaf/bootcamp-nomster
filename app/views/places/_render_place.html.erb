@@ -74,7 +74,7 @@
 
 			<% if (!defined?(gallery) || !gallery) && place.photos.first.present? %>
 				<div class="float-right">
-					<%= render partial: "render_thumbnail", locals: {photo: place.photos.first} %>
+					<%= render partial: "photos/render_thumbnail", locals: {photo: place.photos.first} %>
 				</div>
 			<% end %>
 		</div>
@@ -87,7 +87,7 @@
 		
 		
 		<% if defined?(comment) && comment && place.comments.first.present? %>
-			<%= render partial: "render_comment_snippet", locals: {comment: place.comments.last} %>
+			<%= render partial: "comments/render_comment_snippet", locals: {comment: place.comments.last} %>
 		<% end %>
 
 		<hr>

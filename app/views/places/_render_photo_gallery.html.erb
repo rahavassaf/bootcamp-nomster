@@ -2,7 +2,7 @@
 	<!-- the gallery -->
 	<div class="col-11 p-2 row">
 		<% place.photos.each do |f| %>
-			<%= render partial: "render_thumbnail", locals: {photo: f} %>
+			<%= render partial: "photos/render_thumbnail", locals: {photo: f} %>
 		<% end %>
 	</div>
 
