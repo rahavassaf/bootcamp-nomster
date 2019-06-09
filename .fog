@@ -1,0 +1,20 @@
+##################################################################
+# This is configuration snippet to configure Google Cloud Platform
+# for fog library.
+#
+# 1. Copy this file into your home dir: "~/.fog":
+#
+#    $ cat .fog.example >> ~/.fog
+#
+# 2. Follow instructions to generate a private key: 
+#    https://cloud.google.com/storage/docs/authentication#generating-a-private-key
+#
+# 3. Edit the new file accordingly.
+#
+##################################################################
+# START GOOGLE CONFIG
+my_google_credentials:
+    google_project: 'genuine-ridge-242303',
+    google_json_key_string: ENV['GCS_KEY_JSON'],
+# /END GOOGLE CONFIG
+#################################################################
