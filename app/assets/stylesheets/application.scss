@@ -467,13 +467,13 @@ img.picture-thumbnail {
 	border: 2px #fff solid;
 	margin: 10px;
 	z-index: 1000;
+	border-radius: 5px;
 }
 
 img.picture-thumbnail:hover {
 	transform: scale(1.2);
 	transition: transform 0.3s;
 	cursor: pointer;
-	z-index: 1000;
 }
 
 .thumbnail-toolbar {
