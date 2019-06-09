@@ -12,6 +12,8 @@ CarrierWave.configure do |config|
     	:google_storage_secret_access_key => ENV['GCS_SECRET'],
     }
 
+    config.fog_provider = 'fog/google'
+
     config.fog_directory = 'nomster-assaf-rahav-photos'
   else
     config.storage = :file
