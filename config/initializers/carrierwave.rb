@@ -6,15 +6,15 @@ CarrierWave.configure do |config|
 
 
   if Rails.env.staging? || Rails.env.production?
+	config.fog_provider = 'fog/google' 
+
 	config.fog_credentials = {
-    	:provider                         => 'Google',
-    	:google_storage_access_key_id     => ENV['GCS_ID'],
-    	:google_storage_secret_access_key => ENV['GCS_SECRET'],
-    }
+		provider: 'Google',
+		google_project: 'genuine-ridge-242303',
+		google_json_key_string: ENV['GCS_KEY_JSON'],
+	}
 
-    config.fog_provider = 'fog/google'
-
-    config.fog_directory = 'nomster-assaf-rahav-photos'
+	config.fog_directory = 'nomster-assaf-rahav-photos'
   else
     config.storage = :file
   end
