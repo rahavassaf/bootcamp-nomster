@@ -1,0 +1,26 @@
+<div class="modal modal-wide fade" id="new_place_modal" tabindex="-1" role="dialog" aria-labelledby="new_place_modal" aria-hidden="true" style="padding:0px;">
+<div class="textured-border" style="margin: 0px;">
+  <div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:20px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="new_place_modal">Enter Your Place Detail</h4>
+      </div>
+
+      <%= simple_form_for Place.new do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+
+        <br>
+        <div style="align-content: center; text-align: center;">
+          <%= f.submit 'Create', class: 'btn btn-primary' %>
+          &nbsp;
+          <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+            Cancel
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

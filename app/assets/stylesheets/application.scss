@@ -319,6 +319,24 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 1000;
 }
 
+.avatar_button {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	text-align: center;
+	font-size: 25px;
+	align-content: center;
+	padding: 0px;
+	margin: 0px;
+	background-color: #444445;
+	border: solid 3px #808084;
+	border-radius: 50%;
+	box-shadow: 10px 10px 10px 0 #111;
+	z-index: 1000;
+}
+
 .photo_add_button {
 	width: 50px;
 	height: 50px;
