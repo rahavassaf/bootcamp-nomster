@@ -1,6 +1,6 @@
 <div class ="textured-border col-10 offset-1">
-	<div class ="accent-color profile-header">
-		<h2>
+	<div>
+		<h2 class="accent-color profile-header dark-text-shadow">
 			<% if @itisme %>
 				My profile (<%= @user.email %>)
 			<% else %>
@@ -10,8 +10,51 @@
 	</div>
 
 	<div class="booyah-box">
-		<h3>Member since: <%= @user.created_at.strftime("%b %e %Y") %></h3>
-		<h4>Total Comments: <%= @user.comments.count %></h4>
-		<h4>Total 5-Star Reviews: <%= @user.comments.where(:rating => 5).count %></h4>
+		<div class="row">
+			<div class="col-8" style="font-family: 'Rubik', sans-serif;">
+				<h5>
+					<div class="row">
+						<div class="col-6"><b>Member since</b></div>         <div class="col-6"><%= @user.created_at.strftime("%b %e %Y") %></div>
+					</div>
+
+					<div class="row">
+						<div class="col-6"><b>Total Comments</b></div>       <div class="col-6"><%= @user.comments.count %></div>
+					</div>
+
+					<div class="row">
+						<div class="col-6"><b>Total 5-Star Reviews</b></div> <div class="col-6"><%= @user.comments.where(:rating => 5).count %></div>
+					</div>
+				</h5>
+			</div>
+
+			<div class="col-4">
+				img
+			</div>
+		</div>
 	</div>
 </div>
+
+
+<br>
+
+<div class="clear"></div>
+
+<h2 class="accent-color profile-header dark-text-shadow"><%= @itisme ? "My" : "#{@user.email}`s" %> Comments</h2>
+<div class="row col-10 offset-1">
+	<% @user.comments.each do |c| %>
+		<%= render partial: 'comments/render_comment_snippet', locals: {comment: c, context: true} %>
+	<% end %>
+</div>
+
+<br>
+
+<div class="clear"></div>
+
+<h2 class="accent-color profile-header dark-text-shadow"><%= @itisme ? "My" : "#{@user.email}`s" %> Places</h2>
+<div class="row">
+	<% @user.places.each do |p| %>
+		<%= render partial: 'places/render_place', locals: {place: p, rating: p.comments.average(:rating) || -1} %>
+	<% end %>
+</div>
+
+

@@ -1,16 +1,43 @@
-<div class="col-12 col-sm-6">
+<div class="col-12 col-sm-6" style="display: inline-block;">
 
-	<blockquote>
-		<div class="snippet_rating">
-			<%= render partial: 'places/render_rating', locals: {rating: comment.rating} %>
+		<div style="float: left; width: 90%">
+		<blockquote>
+			<div class="snippet_rating">
+				<%= render partial: 'places/render_rating', locals: {rating: comment.rating} %>
+			</div>
+
+			<div class="snippet_message"><%= comment.message %></div>
+
+			<div style="display: inline-block; width: 100%;">
+				<div class="snippet_email"><%= link_to comment.user.email, user_path(comment.user) %></div>
+				<div class="snippet_date"><%= comment.created_at.strftime("%b %e %Y") %></div>
+			</div>
+		</blockquote>
 		</div>
 
-		<div class="snippet_message"><%= comment.message %></div>
+		<!-- when viewing this snippet out of context add tools to manage it -->
+		<% if defined?(context) && context %>
+			<div class="snippet_toolbox" style="float: left;">
+				<% if current_user == comment.user %>
+					<%= render partial: "comments/render_edit_comment_modal", locals: {comment: comment} %>
 
-		<div style="display: inline-block; width: 100%;">
-			<div class="snippet_email"><%= link_to comment.user.email, user_path(comment.user) %></div>
-			<div class="snippet_date"><%= comment.created_at.strftime("%b %e %Y") %></div>
-		</div>
-	</blockquote>
+				
+					<%= link_to '#', data: {toggle: 'modal', target: "#edit_comment_modal#{comment.id}"} do %>
+						<i class="fa fa-edit active_link hover-scale" data-toggle="tooltip" title="Edit"></i>
+					<% end %>
 
+					<br>
+
+					<%= link_to comment_path(:id => comment.id), method: :delete, data: {confirm: 'Are you sure you want to delete this?'} do %>
+						<i class="fa fa-trash active_link hover-scale" data-toggle="tooltip" title="Delete"></i>
+			 		<% end %>
+
+			 		<br>
+		 		<% end %>
+
+	 			<%= link_to place_path(:id => comment.place.id) do %>
+					<i class="fa fa-link active_link hover-scale" data-toggle="tooltip" title="Comment on <%= comment.place.name %>"></i>
+		 		<% end %>
+			</div>
+		<% end %>
 </div>

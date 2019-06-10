@@ -30,6 +30,10 @@ a {
 	color: #6d98c7; 
 }
 
+.clear {
+	clear:both;
+}
+
 .navbar {
 	background: image_url('rubber_grip.png');
 	box-shadow: 0px 10px 10px 0 #6d98c7;
@@ -413,6 +417,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 14px;
 	font-family: 'Rubik', sans-serif;
 	float: right;
+}
+
+.snippet_toolbox {
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	margin: 0.5em 0px 0.5em 0px;
+	padding: 3px;
 }
 
 .snippet_message {
