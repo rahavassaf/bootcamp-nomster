@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   end
   
   resources :comments
+  
   resources :photos
+
+  resources :users, only: :show
 end

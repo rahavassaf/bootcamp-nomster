@@ -37,7 +37,7 @@
 		<% if comment.user.present? %>
 			<hr>
 	        <div style="display: inline-block; width: 100%;">
-	          <div class="email_address"><%= comment.user.email %></div>
+	          <div class="email_address"><%= link_to comment.user.email, user_path(comment.user) %></div>
 		      <div class="date"><%= comment.created_at.strftime("%b %e %Y") %></div>
 		    </div>
 	    <% end %>

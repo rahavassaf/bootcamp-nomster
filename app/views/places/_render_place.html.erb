@@ -94,7 +94,7 @@
 
 		<div style="display: inline-block; width: 100%;">
 		    <% if place.user.present? %>
-			      <div class="email_address"><%= place.user.email %></div>
+			      <div class="email_address"><%= link_to place.user.email, user_path(place.user) %></div>
 		    <% end %>
 
 		    <div class="date"><%= place.created_at.strftime("%b %e %Y") %></div>

@@ -29,7 +29,7 @@
       <a class="accent-color navbar-brand dark-text-shadow active_link hover-scale" href="<%= root_path %>">Nomster</a>
 
       <% if user_signed_in? %>
-        <%= link_to root_path do %>    
+        <%= link_to user_path(current_user) do %>    
           <div class="avatar_button accent-color active_link hover-scale" data-toggle="tooltip" title="Profile (<%= current_user.email %>)">
             <i class="fa fa-user"></i>
           </div>
@@ -57,6 +57,13 @@
           <% if user_signed_in? %>
             <!-- signed in -->
 
+            <!-- profile -->
+            <li class="nav-item active_link">
+              <%= link_to  user_path(current_user), class: "nav-link accent-color dark-text-shadow" do %>
+                <i class="fa fa-user"></i> My Profile
+              <% end %>
+            </li>
+            
             <!-- new place -->
             <li class="nav-item active_link">
               <%= link_to '#', data: {toggle: 'modal', target: "#new_place_modal"}, class: "nav-link accent-color dark-text-shadow" do %>

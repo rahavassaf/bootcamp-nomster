@@ -1,0 +1,17 @@
+<div class ="textured-border col-10 offset-1">
+	<div class ="accent-color profile-header">
+		<h2>
+			<% if @itisme %>
+				My profile (<%= @user.email %>)
+			<% else %>
+				Viewing <%= @user.email %>'s profile
+			<% end %>
+		</h2>
+	</div>
+
+	<div class="booyah-box">
+		<h3>Member since: <%= @user.created_at.strftime("%b %e %Y") %></h3>
+		<h4>Total Comments: <%= @user.comments.count %></h4>
+		<h4>Total 5-Star Reviews: <%= @user.comments.where(:rating => 5).count %></h4>
+	</div>
+</div>
