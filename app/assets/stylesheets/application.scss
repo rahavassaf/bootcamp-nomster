@@ -35,6 +35,19 @@
 	border-bottom: 3px solid #444445;
 }
 
+.navbar-footer {
+	background: image_url('rubber_grip.png');
+	box-shadow: 0px 10px 10px 0 #6d98c7;
+
+	height: 15px;
+	position: sticky;
+	z-index: 100;
+	border-bottom: 3px solid #444445;
+	border-top: 3px solid #444445;
+
+	z-index: 90;
+}
+
 .navbar-brand {
 	font-size: 35px;
 	font-family: 'Days One', sans-serif;
@@ -482,4 +495,27 @@ img.picture-thumbnail:hover {
 
 .thumbnail-toolbar:hover {
 	display: inline;
+}
+
+.carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
+  width: 100%;
+  max-height: 300px;
+}
+
+.carousel-item-prev {
+  display: block;
+}
+
+.carousel-caption-container {
+	background: rgba(0, 0, 0, 0.6);
+	display: inline-block;
+	padding: 5px 10px 5px 10px;
+	border-radius: 5px;
+
+	h3 {
+		font-family: 'Archivo Black', sans-serif;
+		font-size: 1.25rem;
+		font-weight: 100;
+		text-shadow: 2px 2px 2px #888;
+	}
 }
