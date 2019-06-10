@@ -31,7 +31,11 @@
       <% if user_signed_in? %>
         <%= link_to user_path(current_user) do %>    
           <div class="avatar_button accent-color active_link hover-scale" data-toggle="tooltip" title="Profile (<%= current_user.email %>)">
-            <i class="fa fa-user"></i>
+            <% if current_user.picture.file.present? %>
+              <%= image_tag current_user.picture.thumb.url %>
+            <% else %>
+              <i class="fa fa-user"></i>
+            <% end %>
           </div>
         <% end %>
       <% else %>

@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   
   resources :photos
 
-  resources :users, only: :show
+
+  patch '/users/:id/avatar(.:format)', to: 'users#setavatar', as: 'set_user_avatar'
+  resources :users, only: [:show]
 end

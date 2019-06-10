@@ -1,0 +1,21 @@
+<div cass="col-1">
+	<%= link_to '#', data: {toggle: 'modal', target: "#avatar_modal"} do %>
+		<%= image_tag @user.picture.thumb.url, :class => "picture-thumbnail" %>
+	<% end %>
+</div>
+
+
+<div class="modal modal-wide fade" id="avatar_modal" tabindex="-1" role="dialog" aria-labelledby="avatar_modal" aria-hidden="true" style="padding:0px; max-width: 65vw;  top: 40vh;">
+	<div class="textured-border" style="margin: 0px; display: inline-block;">
+		<div class="modal-dialog modal-dialog-wide booyah-box" role="document" style="padding:0px; max-width: 65vw; display: inline-block;">
+			<div class="modal-content">
+				<%= image_tag @user.picture.url, :class => "img-fluid" %>
+
+				<button type="button" class="btn btn-warning top-right-absolute" data-dismiss="modal" aria-label="Close">
+				Close
+				</button>
+				
+			</div>
+		</div>
+	</div>
+</div>

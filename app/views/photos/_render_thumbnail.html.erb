@@ -1,9 +1,9 @@
-<div cass="col-1">
+<div cass="col-1" style="display: inline-block; width: 100%; max-width: 175px; max-height: 200px;">
 	<%= link_to '#', data: {toggle: 'modal', target: "#photo_modal_#{photo.id}"} do %>
 		<%= image_tag photo.picture.thumb.url, :class => "picture-thumbnail" %>
 	<% end %>
 
-	<div style="display: inline-block; width: 100%; max-width: 175px; max-height: 175px;">
+	<div >
 		<p class="caption"><%= photo.caption %></p>
 
 		<!-- if displayed outside the place's context, link back to the place -->
