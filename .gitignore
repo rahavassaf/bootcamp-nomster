@@ -19,6 +19,7 @@
 /uploads/
 /public/photo/
 /public/uploads/
+/public/user/
 
 /node_modules
 /yarn-error.log
