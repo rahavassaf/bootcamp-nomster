@@ -1,6 +1,13 @@
 <p>Hey There!</p>
 <p>
-    Congrats!  <b>A comment has been added on Nomster</b>
+    Congrats! <b>A comment has been added on Nomster!</b>
+    <br><br>
+
+    <b><%= @c.user.email %></b> says: <i>"<%= @c.message %>"</i>
+    <br>
+    And has given <%= @c.place.name %> a rating of <%= @c.rating.to_i %> stars
+    <br><br>
+
     Check it out <%= link_to 'here', place_url(@c.place) %>
 </p>
 
