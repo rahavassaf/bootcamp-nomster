@@ -91,6 +91,8 @@
 
 <div class ="textured-border col-10 offset-1">
 	<h2 class="accent-color profile-header dark-text-shadow">Comments</h2>
+</div>
+<div class ="textured-border col-10 offset-1">
 	<div class="row col-10 offset-1">
 		<% @user.comments.each do |c| %>
 			<%= render partial: 'comments/render_comment_snippet', locals: {comment: c, context: true} %>
@@ -109,6 +111,19 @@
 	<% @user.places.each do |p| %>
 		<%= render partial: 'places/render_place', locals: {place: p} %>
 	<% end %>
+</div>
+
+<div class="clear"></div>
+
+<div class ="textured-border col-10 offset-1">
+	<h2 class="accent-color profile-header dark-text-shadow">Photos</h2>
+</div>
+<div class="col-10 offset-1">
+	<div class="row">
+		<% @user.photos.each do |p| %>
+			<%= render partial: 'photos/render_thumbnail', locals: {photo: p} %>
+		<% end %>
+	</div>
 </div>
 
 
