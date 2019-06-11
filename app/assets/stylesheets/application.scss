@@ -43,6 +43,21 @@ a {
 	border-bottom: 3px solid #444445;
 }
 
+.navbar-round {
+	font-size: 25px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	align-content: center;
+	padding: 8px 0px 0px 0px;
+	margin: 0px;
+	background-color: #444445;
+	border: solid 3px #808084 !important;
+	border-radius: 50%;
+	box-shadow: 10px 10px 10px 0 #111;
+	z-index: 1000;
+}
+
 .navbar-footer {
 	background: image_url('rubber_grip.png');
 	box-shadow: 0px 10px 10px 0 #6d98c7;
@@ -128,7 +143,7 @@ body {
 	border: 3px solid;
 	border-color: #444445 #808084 #808084 #444445;
 	border-radius: 5px;
-	padding: 20px;
+	padding: 10px 20px 10px 20px;
 }
 
 .pagination {
@@ -237,6 +252,10 @@ hr.vertical {
 	margin: 0px 3px 0px 3px;
 	border-radius: 1px;
 	vertical-align: bottom;
+}
+
+hr.thin {
+	margin: 2px 0px 2px 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -514,7 +533,7 @@ img.picture-thumbnail {
 	height: auto;
 	box-shadow: 4px 4px 10px #111;
 	transition: transform 0.3s;
-	border: 2px #fff solid;
+	border: 2px #6d98c7 solid;
 	margin: 10px;
 	z-index: 1000;
 	border-radius: 5px;

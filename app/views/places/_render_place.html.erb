@@ -67,7 +67,7 @@
 		<div class="row">
 			<div class="col-8">
 				<div class="title accent-color dark-text-shadow"><%= place.name %></div>
-				
+				<br>
 				<% if place.latitude.present? && place.longitude.present? %>
 					<%= render partial: "places/render_map_modal", locals: {place: place} %>
 					
@@ -88,9 +88,9 @@
 			<% end %>
 		</div>
 
-		<hr>
+		<hr class="thin">
 
-		<div class="col-10">
+		<div class="col-10" style="height: auto;">
 			<p class="message"><%= place.description %></p><br>
 		</div>
 		
@@ -99,7 +99,7 @@
 			<%= render partial: "comments/render_comment_snippet", locals: {comment: place.comments.last} %>
 		<% end %>
 
-		<hr>
+		<hr class="thin">
 
 		<div style="display: inline-block; width: 100%;">
 		    <% if place.user.present? %>
@@ -110,7 +110,7 @@
 	    </div>
 
 	    <% if defined?(gallery) && gallery %>
-	    	<hr>
+	    	<hr class="thin">
 	    	
 	    	<%= render partial: "places/render_photo_gallery", locals: {place: place} %>
 	    <% end %>

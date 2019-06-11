@@ -22,9 +22,9 @@
 
     <!-- navbar -->
     <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
-      <button class="navbar-toggler navbar-toggler-right accent-color-background active_link hover-scale" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="navbar-toggler navbar-toggler-right active_link hover-scale navbar-round" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars accent-color"></i>
+      </div>
 
       <a class="accent-color navbar-brand dark-text-shadow active_link hover-scale" href="<%= root_path %>">Nomster</a>
 
@@ -51,13 +51,6 @@
             <% end %>
           </li>
 
-          <!-- Liked places -->
-          <li class="nav-item active_link">
-            <%= link_to user_my_favorites_path, class: "nav-link accent-color dark-text-shadow" do %>
-              <i class="fa fa-heart"></i> Places I Like
-            <% end %>
-          </li>
-
           <!-- gallery -->
           <li class="nav-item active_link">
             <%= link_to photos_path, class: "nav-link accent-color dark-text-shadow" do %>
@@ -75,6 +68,15 @@
               <% end %>
             </li>
             
+            <!-- Liked places -->
+            <% if current_user.likes.present? %>
+              <li class="nav-item active_link">
+                <%= link_to user_my_favorites_path(current_user), class: "nav-link accent-color dark-text-shadow" do %>
+                  <i class="fa fa-heart"></i> Places I Like
+                <% end %>
+              </li>
+            <% end %>
+
             <!-- new place -->
             <li class="nav-item active_link">
               <%= link_to '#', data: {toggle: 'modal', target: "#new_place_modal"}, class: "nav-link accent-color dark-text-shadow" do %>

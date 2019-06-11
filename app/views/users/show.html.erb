@@ -19,21 +19,52 @@
 			<div class="col-8" style="font-family: 'Rubik', sans-serif;">
 				<h5>
 					<div class="row">
-						<div class="col-6"><b>Member since</b></div>         <div class="col-6"><%= @user.created_at.strftime("%b %e %Y") %></div>
+						<div class="col-6">
+							<i class="fa fa-calendar"></i>&nbsp;
+							<b>Member since</b>
+						</div>
+
+						<div class="col-6">
+							<%= @user.created_at.strftime("%b %e %Y") %>
+						</div>
 					</div>
 
 					<div class="row">
-						<div class="col-6"><b>Total Comments</b></div>       <div class="col-6"><%= @user.comments.count %></div>
+						<div class="col-6">
+							<i class="fa fa-map" style="color: inherit; font-size: inherit;"></i>&nbsp;
+							<b>Places posted</b>
+						</div>
+
+						<div class="col-6">
+							<%= @user.places.count %>
+						</div>
 					</div>
 
 					<div class="row">
-						<div class="col-6"><b>Total 5-Star Reviews</b></div> <div class="col-6"><%= @user.comments.where(:rating => 5).count %></div>
+						<div class="col-6">
+							<i class="fa fa-comments"></i>&nbsp;
+							<b>Comments</b>
+						</div>
+
+						<div class="col-6">
+							<%= @user.comments.count %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-6">
+							<i class="fa fa-star"></i>&nbsp;
+							<b>5-Star Reviews</b>
+						</div>
+
+						<div class="col-6">
+							<%= @user.comments.where(:rating => 5).count %>
+						</div>
 					</div>
 				</h5>
 			</div>
 
-			<div class="col-4">
-
+			<div class="float-right">
 				<% if @user.picture.file.present? %>
 					<%= render partial: 'users/render_avatar' %>
 				<% else %>
@@ -47,8 +78,8 @@
 						<i class="fa fa-edit active_link hover-scale" data-toggle="tooltip" title="Edit Avatar"></i>
 					<% end %>
 				<% end %>
-				
 			</div>
+			<div class="col-1"></div>
 		</div>
 	</div>
 </div>
@@ -71,7 +102,9 @@
 
 <div class="clear"></div>
 
-<h2 class="accent-color profile-header dark-text-shadow">Places</h2>
+<div class ="textured-border col-10 offset-1">
+	<h2 class="accent-color profile-header dark-text-shadow">Places</h2>
+</div>
 <div class="row">
 	<% @user.places.each do |p| %>
 		<%= render partial: 'places/render_place', locals: {place: p} %>
