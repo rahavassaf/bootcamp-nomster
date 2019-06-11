@@ -58,18 +58,20 @@
 
 <div class="clear"></div>
 
-<h2 class="accent-color profile-header dark-text-shadow"><%= @itisme ? "My" : "#{@user.email}`s" %> Comments</h2>
-<div class="row col-10 offset-1">
-	<% @user.comments.each do |c| %>
-		<%= render partial: 'comments/render_comment_snippet', locals: {comment: c, context: true} %>
-	<% end %>
+<div class ="textured-border col-10 offset-1">
+	<h2 class="accent-color profile-header dark-text-shadow">Comments</h2>
+	<div class="row col-10 offset-1">
+		<% @user.comments.each do |c| %>
+			<%= render partial: 'comments/render_comment_snippet', locals: {comment: c, context: true} %>
+		<% end %>
+	</div>
 </div>
 
 <br>
 
 <div class="clear"></div>
 
-<h2 class="accent-color profile-header dark-text-shadow"><%= @itisme ? "My" : "#{@user.email}`s" %> Places</h2>
+<h2 class="accent-color profile-header dark-text-shadow">Places</h2>
 <div class="row">
 	<% @user.places.each do |p| %>
 		<%= render partial: 'places/render_place', locals: {place: p, rating: p.comments.average(:rating) || -1} %>

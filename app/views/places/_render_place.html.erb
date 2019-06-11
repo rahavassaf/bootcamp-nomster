@@ -29,9 +29,18 @@
 
 			<hr class="vertical">
 
-			<!-- #TODO check if the user liked this place -->
-			<i class="fa fa-heart red-heart active_link hover-scale" data-toggle="tooltip" title="Like!"></i>
-			<i class="fa fa-heart grey-transperant active_link hover-scale" data-toggle="tooltip" title="Un-Like :("></i>
+			<!-- this partial is called from too many places, it's easier to find the like inside the view -->
+			<% @like = place.likes.where(:user_id => current_user.id).last %>
+			<% if @like.present? %>
+				<%= link_to like_path(@like), method: :delete do %>
+					<i class="fa fa-heart red-heart active_link hover-scale" data-toggle="tooltip" title="Un-Like :("></i>
+			 	<% end %>
+				
+			<% else %>
+				<%= link_to place_likes_path(:place_id => place.id), method: :post do %>
+					<i class="fa fa-heart grey-transperant active_link hover-scale" data-toggle="tooltip" title="Like :)"></i>
+				<% end %>
+			<% end %>
 		<% end %>
 
 		<!-- options for all user -->
@@ -57,7 +66,7 @@
 		
 		<div class="row">
 			<div class="col-8">
-				<div class="title accent-color"><%= place.name %></div>
+				<div class="title accent-color dark-text-shadow"><%= place.name %></div>
 				
 				<% if place.latitude.present? && place.longitude.present? %>
 					<%= render partial: "places/render_map_modal", locals: {place: place} %>
@@ -94,7 +103,7 @@
 
 		<div style="display: inline-block; width: 100%;">
 		    <% if place.user.present? %>
-			      <div class="email_address"><%= link_to place.user.email, user_path(place.user) %></div>
+			      <div class="email_address active_link hover-scale"><%= link_to place.user.email, user_path(place.user) %></div>
 		    <% end %>
 
 		    <div class="date"><%= place.created_at.strftime("%b %e %Y") %></div>

@@ -15,6 +15,7 @@ class Place < ApplicationRecord
 	belongs_to :user
 	has_many :comments
 	has_many :photos
+	has_many :likes
 
 	geocoded_by :address
 	before_validation :geocode, if: :address_changed?

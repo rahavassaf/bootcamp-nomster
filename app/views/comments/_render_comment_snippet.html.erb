@@ -9,7 +9,7 @@
 			<div class="snippet_message"><%= comment.message %></div>
 
 			<div style="display: inline-block; width: 100%;">
-				<div class="snippet_email"><%= link_to comment.user.email, user_path(comment.user) %></div>
+				<div class="snippet_email active_link hover-scale"><%= link_to comment.user.email, user_path(comment.user) %></div>
 				<div class="snippet_date"><%= comment.created_at.strftime("%b %e %Y") %></div>
 			</div>
 		</blockquote>
