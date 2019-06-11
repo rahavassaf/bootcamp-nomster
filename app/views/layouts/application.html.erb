@@ -51,6 +51,13 @@
             <% end %>
           </li>
 
+          <!-- Liked places -->
+          <li class="nav-item active_link">
+            <%= link_to user_my_favorites_path, class: "nav-link accent-color dark-text-shadow" do %>
+              <i class="fa fa-heart"></i> Places I Like
+            <% end %>
+          </li>
+
           <!-- gallery -->
           <li class="nav-item active_link">
             <%= link_to photos_path, class: "nav-link accent-color dark-text-shadow" do %>

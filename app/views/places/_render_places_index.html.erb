@@ -1,0 +1,11 @@
+<%= render partial: 'places/render_slider' %>
+
+<%= render partial: 'places/render_pagination' %>
+
+<br>
+
+<% @places.each  do |place| %>
+	<%= render partial: "places/render_place", locals: {place: place, comment: true} %>
+<% end %>
+
+<%= render partial: 'places/render_pagination' %>

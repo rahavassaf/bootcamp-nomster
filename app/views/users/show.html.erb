@@ -74,7 +74,7 @@
 <h2 class="accent-color profile-header dark-text-shadow">Places</h2>
 <div class="row">
 	<% @user.places.each do |p| %>
-		<%= render partial: 'places/render_place', locals: {place: p, rating: p.comments.average(:rating) || -1} %>
+		<%= render partial: 'places/render_place', locals: {place: p} %>
 	<% end %>
 </div>
 

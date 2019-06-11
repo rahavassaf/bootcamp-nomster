@@ -1,9 +1,1 @@
-<%= render partial: 'render_slider' %>
-
-<%= render partial: 'render_pagination' %>
-
-<% @places.each  do |place| %>
-	<%= render partial: "render_place", locals: {place: place, rating: @ratings[place.id], comment: true} %>
-<% end %>
-
-<%= render partial: 'render_pagination' %>
+<%= render partial: 'render_places_index' %>
