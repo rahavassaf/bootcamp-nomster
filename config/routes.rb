@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   patch '/users/:id/avatar(.:format)', to: 'users#setavatar', as: 'set_user_avatar'
   get '/users/:id/my_favorites(.:format)', to: 'users#my_favorites', as: 'user_my_favorites'
   resources :users, only: [:show]
+
+  get '/about', to: 'misc#about', as: 'about'
 end
