@@ -3,7 +3,18 @@
 
 <div class ="textured-border col-9 col-md-6 offset-1">
 	<div class="booyah-box">
-		founded in by
+		<div class="row">
+			<div class="col-6">
+			<P class="about">
+				Founded in 1978 by ruthless entrepreneur <%= link_to 'Scrooge McDuck', user_path(User.find_by_email('scrooge_mcduck@nomster-assaf-rahav.herokuapp.com').id)  %>, Nomster quickly rose to fame and success while crushing the feeble competition.
+			</P>
+			</div>
+
+			<div class="col-2">
+			<% @user = User.find_by_email('scrooge_mcduck@nomster-assaf-rahav.herokuapp.com') %>
+			<%= render partial: 'users/render_avatar' %>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -11,7 +22,18 @@
 
 <div class ="textured-border col-9 col-md-6 offset-2">
 	<div class="booyah-box">
-		dynamic CEO
+		<div class="row">
+			<div class="col-6">
+			<P class="about">
+				In 1983 an even more ruthless entrepreneur, <%= link_to 'Montgomery "Monty" Burns', user_path(User.find_by_email('mr_burns@nomster-assaf-rahav.herokuapp.com').id)  %> joined the company, ensuring total marked domination.
+			</P>
+			</div>
+
+			<div class="col-2">
+			<% @user = User.find_by_email('mr_burns@nomster-assaf-rahav.herokuapp.com') %>
+			<%= render partial: 'users/render_avatar' %>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -19,7 +41,18 @@
 
 <div class ="textured-border col-9 col-md-6 offset-1">
 	<div class="booyah-box">
-		Rich investor
+		<div class="row">
+			<div class="col-6">
+			<P class="about">
+				In 1987, brilliant lawyer <%= link_to 'Jackie Chiles', user_path(User.find_by_email('jackie_chiles@nomster-assaf-rahav.herokuapp.com').id)  %> was brought onboard to sue any remaining competition into oblivion, and squash government regulators' anti-trust efforts.
+			</P>
+			</div>
+
+			<div class="col-2">
+			<% @user = User.find_by_email('jackie_chiles@nomster-assaf-rahav.herokuapp.com') %>
+			<%= render partial: 'users/render_avatar' %>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -27,7 +60,18 @@
 
 <div class ="textured-border col-9 col-md-6 offset-2">
 	<div class="booyah-box">
-		tech genious
+		<div class="row">
+			<div class="col-6">
+			<P class="about">
+				In 1998 <%= link_to 'Brain', user_path(User.find_by_email('brain@nomster-assaf-rahav.herokuapp.com').id)  %> joined in order to ensure continued dominance in the emerging e-commerce market.
+			</P>
+			</div>
+
+			<div class="col-2">
+			<% @user = User.find_by_email('brain@nomster-assaf-rahav.herokuapp.com') %>
+			<%= render partial: 'users/render_avatar' %>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -35,7 +79,18 @@
 
 <div class ="textured-border col-9 col-md-6 offset-1">
 	<div class="booyah-box">
-		legal mastermind
+		<div class="row">
+			<div class="col-6">
+			<P class="about">
+				<%= link_to 'Pinky', user_path(User.find_by_email('pinky@nomster-assaf-rahav.herokuapp.com').id)  %>, a usless but lovable sidekick of brain also "works" for us. It is unclear what his purpose is, but Brain insists we keep him.
+			</P>
+			</div>
+
+			<div class="col-2">
+			<% @user = User.find_by_email('pinky@nomster-assaf-rahav.herokuapp.com') %>
+			<%= render partial: 'users/render_avatar' %>
+			</div>
+		</div>
 	</div>
 </div>
 
