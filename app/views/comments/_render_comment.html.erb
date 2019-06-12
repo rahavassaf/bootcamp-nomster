@@ -32,7 +32,23 @@
 	</div>
 
 	<div class="booyah-box">
-		<p class="message"><%= comment.message %></p>
+		<div class="row">
+			<div class="col-8">
+			<p class="message"><%= comment.message %></p>
+			</div>
+
+			<div class=col-2>&nbsp;</div>
+			
+			<div class="col-2">
+				<div class="avatar_comment_button accent-color active_link hover-scale" data-toggle="tooltip" title="Profile (<%= comment.user.email %>)">
+		            <% if comment.user.picture.file.present? %>
+		              <%= image_tag comment.user.picture.thumb.url %>
+		            <% else %>
+		              <i class="fa fa-user"></i>
+		            <% end %>
+		        </div>
+	    	</div>
+		</div>
 
 		<% if comment.user.present? %>
 			<hr>
