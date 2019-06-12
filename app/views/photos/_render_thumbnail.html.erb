@@ -7,7 +7,7 @@
 		<p class="caption"><%= photo.caption %></p>
 
 		<!-- if displayed outside the place's context, link back to the place -->
-		<% if defined?(context) && context && false %>
+		<% if defined?(context) && context %>
 			<%= link_to place_path(:id => photo.place_id), :class => "active_link hover-scale accent-color" do %>
 				&nbsp;<i class="fa fa-link active_link hover-scale" data-toggle="tooltip" title="<%= photo.place.name %>"></i>
 			<% end %>
