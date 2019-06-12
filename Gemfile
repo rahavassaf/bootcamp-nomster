@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'railties'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -73,7 +75,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'figaro'
 gem 'mini_magick'
-gem 'railties'
+
 gem 'fog-google'
 gem 'mime-types'
 gem 'carrierwave', '~> 1.0'
