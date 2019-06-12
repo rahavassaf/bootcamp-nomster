@@ -25,7 +25,7 @@ class PlacesController < ApplicationController
 		@supress_self_link = true # avoid circular links in place_path
 		@comments = Comment.where(:place_id => params[:id]) || []
 		#TODO prevent users from submitting multiple comments for the same place
-		@new_comment = Comment.new
+		@new_comment = user_signed_in? && Comment.where(:user_id => current_user.id, :place_id => @place.id).present? ? nil : Comment.new
 	end
 
 	def edit

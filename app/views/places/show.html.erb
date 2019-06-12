@@ -1,15 +1,22 @@
-<%= render partial: "comments/render_add_comment_modal", locals: {place: @place} %>
+<%= render partial: "comments/render_add_comment_modal", locals: {place: @place} if @new_comment.present? %>
 
 <%= render partial: 'render_place', locals: {place: @place, gallery: true} %>
 
-<!--TODO If there is only one comment, center it -->
+<!-- center a single comment, otherwise side-by-side -->
 <div class="row" style="margin-right: 20px; margin-left: 20px;">
-<% @comments.each do |c| %>
-	<%= render partial: 'comments/render_comment', locals: {comment: c} %>
+	<% if @comments.count > 1 %>
+		<% @comments.each do |c| %>
+			<%= render partial: 'comments/render_comment', locals: {comment: c} %>
+		<% end %>
+	<% elsif @comments.present? %>
+		<div class="col-4"></div>
+		<div class="col-8">
+			<%= render partial: 'comments/render_comment', locals: {comment: @comments[0]} %>
+		</div>
 	<% end %>
 </div>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && @new_comment.present? %>
 	<%= link_to '#', data: {toggle: 'modal', target: "#add_comment_modal"} do %>		
 		<div class="plus_button accent-color active_link hover-scale" data-toggle="tooltip" title="Add Comment">
 			<i class="fa fa-plus"></i>

@@ -11,6 +11,10 @@
 			<%= link_to place_path(:id => photo.place_id), :class => "active_link hover-scale accent-color" do %>
 				&nbsp;<i class="fa fa-link active_link hover-scale" data-toggle="tooltip" title="<%= photo.place.name %>"></i>
 			<% end %>
+
+			<%= link_to user_path(:id => photo.user_id), :class => "active_link hover-scale accent-color" do %>
+				&nbsp;<i class="fa fa-user active_link hover-scale" data-toggle="tooltip" title="<%= photo.user.email %>"></i>
+			<% end %>
 		<% end %>
 
 		<% if user_signed_in? && current_user.id == photo.user_id %>

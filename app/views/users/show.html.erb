@@ -92,27 +92,40 @@
 <div class ="textured-border col-10 offset-1">
 	<h2 class="accent-color profile-header dark-text-shadow">Comments</h2>
 </div>
-<div class ="textured-border col-10 offset-1">
-	<div class="row col-10 offset-1">
-		<% @user.comments.each do |c| %>
-			<%= render partial: 'comments/render_comment_snippet', locals: {comment: c, context: true} %>
-		<% end %>
+<% if @user.comments.present? %>
+	<div class ="textured-border col-10 offset-1 row">
+
+	<% if @user.comments.count > 1 %>
+		<div class="row col-10 offset-1">
+			<% @user.comments.each do |c| %>
+				<%= render partial: 'comments/render_comment_snippet', locals: {comment: c, context: true} %>
+			<% end %>
+		</div>
+	<% elsif @user.comments.count == 1 %>
+		<div class="col-4">&nbsp;</div>
+		<div class="col-8">
+			<%= render partial: 'comments/render_comment_snippet', locals: {comment: @user.comments.first, context: true} %>
+		</div>
+	<% end %>
+
 	</div>
-</div>
+<% end %>
 
 <br>
-
 <div class="clear"></div>
 
 <div class ="textured-border col-10 offset-1">
 	<h2 class="accent-color profile-header dark-text-shadow">Places</h2>
 </div>
-<div class="row">
-	<% @user.places.each do |p| %>
-		<%= render partial: 'places/render_place', locals: {place: p} %>
-	<% end %>
-</div>
+<% if @user.places.present? %>
+	<div class="row">
+		<% @user.places.each do |p| %>
+			<%= render partial: 'places/render_place', locals: {place: p} %>
+		<% end %>
+	</div>
+<% end %>
 
+<br>
 <div class="clear"></div>
 
 <div class ="textured-border col-10 offset-1">
@@ -125,5 +138,3 @@
 		<% end %>
 	</div>
 </div>
-
-
