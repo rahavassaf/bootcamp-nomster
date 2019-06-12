@@ -62,7 +62,7 @@ class PlacesController < ApplicationController
 
 		# clean up orphaned records
 		@place.comments.destroy_all
-		@place.photos.destoy_all
+		@place.photos.destroy_all
 		@place.likes.destroy_all
 
 		# destory the place (figuritively)
