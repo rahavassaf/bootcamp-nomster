@@ -60,9 +60,12 @@ class PlacesController < ApplicationController
 			return render plain: 'Not Allowed', status: :forbidden
 		end
 
-		# clean up orphaned comments
+		# clean up orphaned records
 		@place.comments.destroy_all
-		
+		@place.photos.destoy_all
+		@place.likes.destroy_all
+
+		# destory the place (figuritively)
 		@place.destroy
 
 		redirect_to root_path
