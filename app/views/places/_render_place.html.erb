@@ -66,12 +66,17 @@
 		
 		<div class="row">
 			<div class="col-8">
-				<%= link_to place_path(:id => place.id) do %>
-					<div class="title accent-color dark-text-shadow active_link">
-						<a><%= place.name %></a>
+				<% if defined?(@supress_self_link) && @supress_self_link %>
+					<div class="title accent-color dark-text-shadow">
+						<%= place.name %>
 					</div>
+				<% else %>
+					<%= link_to place_path(:id => place.id) do %>
+						<div class="title accent-color dark-text-shadow active_link">
+							<%= place.name %>
+						</div>
+					<% end %>
 				<% end %>
-
 				<br>
 
 				<% if place.latitude.present? && place.longitude.present? %>
