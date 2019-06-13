@@ -40,13 +40,15 @@
 			<div class=col-2>&nbsp;</div>
 
 			<div class="col-2">
-				<div class="avatar_comment_button accent-color active_link hover-scale" data-toggle="tooltip" title="Profile (<%= comment.user.email %>)">
-		            <% if comment.user.picture.file.present? %>
-		              <%= image_tag comment.user.picture.thumb.url %>
-		            <% else %>
-		              <i class="fa fa-user"></i>
-		            <% end %>
-		        </div>
+				<%= link_to user_path(comment.user) do %>
+					<div class="avatar_comment_button accent-color active_link hover-scale" data-toggle="tooltip" title="Profile (<%= comment.user.email %>)">
+			            <% if comment.user.picture.file.present? %>
+			              <%= image_tag comment.user.picture.thumb.url %>
+			            <% else %>
+			              <i class="fa fa-user"></i>
+			            <% end %>
+			        </div>
+		        <% end %>
 	    	</div>
 		</div>
 
