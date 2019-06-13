@@ -433,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
 .active_link:hover {
 	filter: contrast(200%);
 	cursor: pointer;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 .address{

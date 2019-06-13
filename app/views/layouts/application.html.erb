@@ -30,7 +30,7 @@
 
       <% if user_signed_in? %>
         <%= link_to user_path(current_user) do %>    
-          <div class="avatar_button accent-color active_link hover-scale" data-toggle="tooltip" title="Profile (<%= current_user.email %>)">
+          <div class="avatar_button accent-color hover-scale" data-toggle="tooltip" title="Profile (<%= current_user.email %>)">
             <% if current_user.picture.file.present? %>
               <%= image_tag current_user.picture.thumb.url %>
             <% else %>

@@ -66,8 +66,14 @@
 		
 		<div class="row">
 			<div class="col-8">
-				<div class="title accent-color dark-text-shadow"><%= place.name %></div>
+				<%= link_to place_path(:id => place.id) do %>
+					<div class="title accent-color dark-text-shadow active_link">
+						<a><%= place.name %></a>
+					</div>
+				<% end %>
+
 				<br>
+
 				<% if place.latitude.present? && place.longitude.present? %>
 					<%= render partial: "places/render_map_modal", locals: {place: place} %>
 					
@@ -91,7 +97,8 @@
 		<hr class="thin">
 
 		<div class="col-10" style="height: auto;">
-			<p class="message"><%= place.description %></p><br>
+			<p class="message"><%= place.description %></p>
+			<br>
 		</div>
 		
 		
