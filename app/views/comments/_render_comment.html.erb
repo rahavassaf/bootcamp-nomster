@@ -38,7 +38,7 @@
 			</div>
 
 			<div class=col-2>&nbsp;</div>
-			
+
 			<div class="col-2">
 				<div class="avatar_comment_button accent-color active_link hover-scale" data-toggle="tooltip" title="Profile (<%= comment.user.email %>)">
 		            <% if comment.user.picture.file.present? %>
@@ -53,7 +53,7 @@
 		<% if comment.user.present? %>
 			<hr>
 	        <div style="display: inline-block; width: 100%;">
-	          <div class="email_address active_link hover-scale"><%= link_to comment.user.email, user_path(comment.user) %></div>
+	          <div class="email_address active_link"><%= link_to comment.user.email, user_path(comment.user) %></div>
 		      <div class="date"><%= comment.created_at.strftime("%b %e %Y") %></div>
 		    </div>
 	    <% end %>
