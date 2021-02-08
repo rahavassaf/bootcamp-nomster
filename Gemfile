@@ -78,7 +78,7 @@ gem 'mini_magick'
 
 gem 'fog-google'
 gem 'mime-types'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 
 
 source 'https://rails-assets.org' do
